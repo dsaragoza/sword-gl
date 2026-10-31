@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-TARGET_VERSION = 4.3
+TARGET_VERSION = 4.6
 
 SWORD_TYPES_CONVERSION_TABLE = {
     "void": "void",
@@ -194,7 +194,6 @@ def emit_sword_code(enums, commands) -> str:
 
     # Idiomatic OpenGL to Sword function calls
     code += "\n// Idiomatic OpenGL to Sword function calls definitions\n"
-    code += 'error glFunctionPointerNotLoaded = "OpenGL function pointer not loaded. Make sure to call the initialization function before executing any OpenGL command."\n'
     for command in commands.keys():
         params = commands[command]["params"]
         return_type = commands[command]["return"]
@@ -229,13 +228,12 @@ def emit_sword_code(enums, commands) -> str:
             param_call_code = param_call_code[:-2]
 
         code += f"""
-func (c *Context) {command[2:]}({param_code}) !{return_type} {{
+func (c *Context) {command[2:]}({param_code}) {return_type} {{
     if command := c.{command} {{
         fn := extern func({param_types_code}) {return_type}(command)
         {"return " if return_type != "void" else ""}fn({param_call_code})
-    }} else {{
-        return error.glFunctionPointerNotLoaded
     }}
+    {"return nil" if "?" in return_type else ("return 0" if return_type != "void" else "")}
 }}
         """
 
@@ -243,13 +241,15 @@ func (c *Context) {command[2:]}({param_code}) !{return_type} {{
     code += f"\n// OpenGL function pointers load function [SHOULD BE CALLED BEFORE ANY OTHER OPENGL FUNCTION]\n"
     code += f"""error openGLCommandNotFound = "OpenGL command not found. Check your driver version and/or your system supported features."
 
-func (mut c *Context) Init(procLoader extern func([*]u8) ?[*]u8) !void {{
+func Init(procLoader extern func([*]u8) ?[*]u8) !Context {{
     mut c := Context{{
 {"".join(("\t\t" + command + ": nil,\n") for command in commands.keys())}
     }}
 
-    commandName string = "glActiveShaderProgram"
-    c.glActiveShaderProgram = procLoader(commandName.ptr)
+    mut commandName := ""
+
+{"".join(('\tcommandName = "'  + command + '\x00"\n\tc.' + command + " = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound\n\n") for command in commands.keys()) }
+    return c
 }}
     """
 
@@ -260,12 +260,12 @@ if __name__ == "__main__":
     root = tree.getroot()
 
     active_enums, active_commands = parse_active_enums_and_commands(root)
-    # print(f"Active enumerations: {len(active_enums)} | Active commands: {len(active_commands)}")
+    print(f"// Active enumerations: {len(active_enums)} | Active commands: {len(active_commands)}")
 
     enums_translated = parse_and_translate_enums(root, active_enums)
-    # print(f"Translated enums: {len(enums_translated.keys())}")
+    print(f"// Translated enums: {len(enums_translated.keys())}")
 
     commands_translated = parse_and_translate_commands(root, active_commands)
-    # print(f"Translated commands: {len(commands_translated.keys())}")
+    print(f"// Translated commands: {len(commands_translated.keys())}")
     
     print(emit_sword_code(enums_translated, commands_translated))

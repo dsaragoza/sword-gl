@@ -1,4 +1,5 @@
 import argparse
+import pathlib
 import xml.etree.ElementTree as ET
 
 TARGET_VERSION = 4.6
@@ -66,7 +67,7 @@ SWORD_KEYWORDS_CONVERSION_TABLE = {
 }
 
 def parse_active_enums_and_commands(root) -> (set, set):
-    # Parse all feature tags with api equal to gl, excluding gles1, gles2 and glsc2, and with version equal to the target version. 
+    # Parse all feature tags with api equal to gl, excluding gles1, gles2 and glsc2, and with version greater than the target version. 
     active_enums    = set()
     active_commands = set()
     for feature in root.iter("feature"):
@@ -176,22 +177,6 @@ def emit_sword_code(enums, commands) -> str:
     code += "\n// OpenGL function pointers definitions\n"
     code += "struct Context {\n"
     for command in commands.keys():
-        params = commands[command]["params"]
-        return_type = commands[command]["return"]
-
-        # Construct the command parameters code
-        param_code = ""
-        for param, param_type in params.items():
-            # Transform reserved keywords
-            param_name = param
-            if param_name in SWORD_KEYWORDS_CONVERSION_TABLE.keys():
-                param_name = SWORD_KEYWORDS_CONVERSION_TABLE[param]
-
-            param_code += f"{param_type}, "
-        
-        if len(param_code) > 0:
-            param_code = param_code[:-2]
-
         code += f"\t{command} ?[*]u8\n"
     code += "}\n"
 
@@ -260,9 +245,12 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {{
 
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument("-p", "--platform", choices = ["windows", "macos", "linux"], help = "The target platform for which to generate the bindings.", required = True)
-    arg_parser.add_argument("-v", "--version", type = float, choices = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6], help = "The target OpenGL version for which to generate the bindings.")
     arg_parser.add_argument("-f", "--file", help = "The target sword file to output the generated bindings.", required = True)
+    
+    group = arg_parser.add_mutually_exclusive_group(required = True)
+    group.add_argument("-p", "--platform", choices = ["windows", "macos", "linux"], help = "The target platform for which to generate the bindings.")
+    group.add_argument("-v", "--version", type = float, choices = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6], help = "The target OpenGL version for which to generate the bindings.")
+    
     args = arg_parser.parse_args()
 
     # Check the chosen platform, switching the target version
@@ -275,7 +263,7 @@ if __name__ == "__main__":
     else:
         TARGET_VERSION = args.version
 
-    tree = ET.parse("codegen/gl.xml")
+    tree = ET.parse(pathlib.Path(__file__).with_name("gl.xml"))
     root = tree.getroot()
 
     # Generate the bindings by parsing the gl.xml file

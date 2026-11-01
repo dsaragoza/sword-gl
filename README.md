@@ -16,11 +16,11 @@ Unlike static C libraries, OpenGL functions are loaded dynamically at runtime th
 
 Pre-generated bindings are maintained across dedicated branches for the most common OpenGL Core targets:
 
-| Branch | OpenGL Version | Recommended Target | Import Statement |
+| Branch | OpenGL Version | Recommended Target | Installation Command |
 | :--- | :--- | :--- | :--- |
-| `main` *(default)* | **OpenGL 4.6** | Modern Windows & Linux | `import "github.com/dsaragoza/sword-gl"` |
-| `4.1` | **OpenGL 4.1** | macOS & Cross-Platform | `import "github.com/dsaragoza/sword-gl@4.1"` |
-| `3.3` | **OpenGL 3.3** | Legacy / Broad Hardware Support | `import "github.com/dsaragoza/sword-gl@3.3"` |
+| `main` *(default)* | **OpenGL 4.6** | Modern Windows & Linux | `shield get github.com/dsaragoza/sword-gl` |
+| `4.1` | **OpenGL 4.1** | macOS & Cross-Platform | `shield get github.com/dsaragoza/sword-gl@4.1` |
+| `3.3` | **OpenGL 3.3** | Legacy / Broad Hardware Support | `shield get github.com/dsaragoza/sword-gl@3.3` |
 
 **Step-by-step installation:**
 
@@ -29,11 +29,11 @@ Pre-generated bindings are maintained across dedicated branches for the most com
     shield new example.com/my-app
     cd my-app
     ```
-2. **Fetch and add `sword-gl` to your `sword.mod`**:
+2. **Fetch and add `sword-gl` to your `sword.mod`** (optionally appending `@4.1` or `@3.3` for your target OpenGL version):
     ```bash
     shield get github.com/dsaragoza/sword-gl
     ```
-3. **Import the package** in your `.sword` source files (optionally appending `@4.1` or `@3.3` for your target branch):
+3. **Import the package** in your `.sword` source files:
     ```sword
     import "github.com/dsaragoza/sword-gl"
     ```

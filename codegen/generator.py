@@ -1,3 +1,4 @@
+import argparse
 import xml.etree.ElementTree as ET
 
 TARGET_VERSION = 4.6
@@ -256,16 +257,35 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {{
     return code
 
 if __name__ == "__main__":
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument("-p", "--platform", choices = ["windows", "macos", "linux"], help = "The target platform for which to generate the bindings.", required = True)
+    arg_parser.add_argument("-v", "--version", type = float, help = "The target OpenGL version for which to generate the bindings.")
+    arg_parser.add_argument("-f", "--file", help = "The target sword file to output the generated bindings.", required = True)
+    args = arg_parser.parse_args()
+
+    # Check the chosen platform, switching the target version
+    # If the target version arg is passed, ignore the platform
+    if args.version is None:
+        if "windows" == args.platform or "linux" == args.platform:
+            TARGET_VERSION = 4.6
+        else:
+            TARGET_VERSION = 4.1
+    else:
+        TARGET_VERSION = args.version
+
     tree = ET.parse("codegen/gl.xml")
     root = tree.getroot()
 
+    # Generate the bindings by parsing the gl.xml file
     active_enums, active_commands = parse_active_enums_and_commands(root)
-    print(f"// Active enumerations: {len(active_enums)} | Active commands: {len(active_commands)}")
+    print(f"Active enumerations: {len(active_enums)} | Active commands: {len(active_commands)}")
 
     enums_translated = parse_and_translate_enums(root, active_enums)
-    print(f"// Translated enums: {len(enums_translated.keys())}")
+    print(f"Translated enums: {len(enums_translated.keys())}")
 
     commands_translated = parse_and_translate_commands(root, active_commands)
-    print(f"// Translated commands: {len(commands_translated.keys())}")
-    
-    print(emit_sword_code(enums_translated, commands_translated))
+    print(f"Translated commands: {len(commands_translated.keys())}")
+   
+    # Output to provided file
+    with open(args.file, "w") as f:
+        print(emit_sword_code(enums_translated, commands_translated), file = f)

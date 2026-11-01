@@ -5,6 +5,7 @@ TARGET_VERSION = 4.6
 
 SWORD_TYPES_CONVERSION_TABLE = {
     "void": "void",
+    "GLbyte": "i8",
     "GLboolean": "u8",
     "GLenum": "u32",
     "GLhandleARB": "u32",
@@ -38,6 +39,7 @@ SWORD_TYPES_CONVERSION_TABLE = {
     "GLfloat *": "?*f32",
     "GLdouble *": "?*f64",
     "const void *const*": "?[*][*]u8",
+    "const GLboolean *": "?*u8",
     "const GLenum *": "?*u32",
     "const GLbyte *": "?*i8",
     "const GLubyte *": "?*u8",
@@ -259,7 +261,7 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {{
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument("-p", "--platform", choices = ["windows", "macos", "linux"], help = "The target platform for which to generate the bindings.", required = True)
-    arg_parser.add_argument("-v", "--version", type = float, help = "The target OpenGL version for which to generate the bindings.")
+    arg_parser.add_argument("-v", "--version", type = float, choices = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6], help = "The target OpenGL version for which to generate the bindings.")
     arg_parser.add_argument("-f", "--file", help = "The target sword file to output the generated bindings.", required = True)
     args = arg_parser.parse_args()
 

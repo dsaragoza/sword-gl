@@ -4,12 +4,7 @@ package gl
 const GL_DEPTH_BUFFER_BIT = 0x00000100
 const GL_STENCIL_BUFFER_BIT = 0x00000400
 const GL_COLOR_BUFFER_BIT = 0x00004000
-const GL_DYNAMIC_STORAGE_BIT = 0x0100
-const GL_CLIENT_STORAGE_BIT = 0x0200
 const GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT = 0x00000001
-const GL_CONTEXT_FLAG_DEBUG_BIT = 0x00000002
-const GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT = 0x00000004
-const GL_CONTEXT_FLAG_NO_ERROR_BIT = 0x00000008
 const GL_CONTEXT_CORE_PROFILE_BIT = 0x00000001
 const GL_CONTEXT_COMPATIBILITY_PROFILE_BIT = 0x00000002
 const GL_MAP_READ_BIT = 0x0001
@@ -18,31 +13,12 @@ const GL_MAP_INVALIDATE_RANGE_BIT = 0x0004
 const GL_MAP_INVALIDATE_BUFFER_BIT = 0x0008
 const GL_MAP_FLUSH_EXPLICIT_BIT = 0x0010
 const GL_MAP_UNSYNCHRONIZED_BIT = 0x0020
-const GL_MAP_PERSISTENT_BIT = 0x0040
-const GL_MAP_COHERENT_BIT = 0x0080
-const GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT = 0x00000001
-const GL_ELEMENT_ARRAY_BARRIER_BIT = 0x00000002
-const GL_UNIFORM_BARRIER_BIT = 0x00000004
-const GL_TEXTURE_FETCH_BARRIER_BIT = 0x00000008
-const GL_SHADER_IMAGE_ACCESS_BARRIER_BIT = 0x00000020
-const GL_COMMAND_BARRIER_BIT = 0x00000040
-const GL_PIXEL_BUFFER_BARRIER_BIT = 0x00000080
-const GL_TEXTURE_UPDATE_BARRIER_BIT = 0x00000100
-const GL_BUFFER_UPDATE_BARRIER_BIT = 0x00000200
-const GL_FRAMEBUFFER_BARRIER_BIT = 0x00000400
-const GL_TRANSFORM_FEEDBACK_BARRIER_BIT = 0x00000800
-const GL_ATOMIC_COUNTER_BARRIER_BIT = 0x00001000
-const GL_SHADER_STORAGE_BARRIER_BIT = 0x00002000
-const GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT = 0x00004000
-const GL_QUERY_BUFFER_BARRIER_BIT = 0x00008000
-const GL_ALL_BARRIER_BITS = 0xFFFFFFFF
 const GL_SYNC_FLUSH_COMMANDS_BIT = 0x00000001
 const GL_VERTEX_SHADER_BIT = 0x00000001
 const GL_FRAGMENT_SHADER_BIT = 0x00000002
 const GL_GEOMETRY_SHADER_BIT = 0x00000004
 const GL_TESS_CONTROL_SHADER_BIT = 0x00000008
 const GL_TESS_EVALUATION_SHADER_BIT = 0x00000010
-const GL_COMPUTE_SHADER_BIT = 0x00000020
 const GL_ALL_SHADER_BITS = 0xFFFFFFFF
 const GL_FALSE = 0
 const GL_NO_ERROR = 0
@@ -94,11 +70,8 @@ const GL_FRONT_AND_BACK = 0x0408
 const GL_INVALID_ENUM = 0x0500
 const GL_INVALID_VALUE = 0x0501
 const GL_INVALID_OPERATION = 0x0502
-const GL_STACK_OVERFLOW = 0x0503
-const GL_STACK_UNDERFLOW = 0x0504
 const GL_OUT_OF_MEMORY = 0x0505
 const GL_INVALID_FRAMEBUFFER_OPERATION = 0x0506
-const GL_CONTEXT_LOST = 0x0507
 const GL_CW = 0x0900
 const GL_CCW = 0x0901
 const GL_POINT_SIZE = 0x0B11
@@ -170,7 +143,6 @@ const GL_TEXTURE_WIDTH = 0x1000
 const GL_TEXTURE_HEIGHT = 0x1001
 const GL_TEXTURE_INTERNAL_FORMAT = 0x1003
 const GL_TEXTURE_BORDER_COLOR = 0x1004
-const GL_TEXTURE_TARGET = 0x1006
 const GL_DONT_CARE = 0x1100
 const GL_FASTEST = 0x1101
 const GL_NICEST = 0x1102
@@ -258,12 +230,6 @@ const GL_BLEND_EQUATION = 0x8009
 const GL_BLEND_EQUATION_RGB = 0x8009
 const GL_FUNC_SUBTRACT = 0x800A
 const GL_FUNC_REVERSE_SUBTRACT = 0x800B
-const GL_CONVOLUTION_1D = 0x8010
-const GL_CONVOLUTION_2D = 0x8011
-const GL_SEPARABLE_2D = 0x8012
-const GL_HISTOGRAM = 0x8024
-const GL_PROXY_HISTOGRAM = 0x8025
-const GL_MINMAX = 0x802E
 const GL_UNSIGNED_BYTE_3_3_2 = 0x8032
 const GL_UNSIGNED_SHORT_4_4_4_4 = 0x8033
 const GL_UNSIGNED_SHORT_5_5_5_1 = 0x8034
@@ -302,7 +268,6 @@ const GL_PROXY_TEXTURE_3D = 0x8070
 const GL_TEXTURE_DEPTH = 0x8071
 const GL_TEXTURE_WRAP_R = 0x8072
 const GL_MAX_3D_TEXTURE_SIZE = 0x8073
-const GL_VERTEX_ARRAY = 0x8074
 const GL_MULTISAMPLE = 0x809D
 const GL_SAMPLE_ALPHA_TO_COVERAGE = 0x809E
 const GL_SAMPLE_ALPHA_TO_ONE = 0x809F
@@ -315,18 +280,10 @@ const GL_BLEND_DST_RGB = 0x80C8
 const GL_BLEND_SRC_RGB = 0x80C9
 const GL_BLEND_DST_ALPHA = 0x80CA
 const GL_BLEND_SRC_ALPHA = 0x80CB
-const GL_COLOR_TABLE = 0x80D0
-const GL_POST_CONVOLUTION_COLOR_TABLE = 0x80D1
-const GL_POST_COLOR_MATRIX_COLOR_TABLE = 0x80D2
-const GL_PROXY_COLOR_TABLE = 0x80D3
-const GL_PROXY_POST_CONVOLUTION_COLOR_TABLE = 0x80D4
-const GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE = 0x80D5
 const GL_BGR = 0x80E0
 const GL_BGRA = 0x80E1
 const GL_MAX_ELEMENTS_VERTICES = 0x80E8
 const GL_MAX_ELEMENTS_INDICES = 0x80E9
-const GL_PARAMETER_BUFFER = 0x80EE
-const GL_PARAMETER_BUFFER_BINDING = 0x80EF
 const GL_POINT_FADE_THRESHOLD_SIZE = 0x8128
 const GL_CLAMP_TO_BORDER = 0x812D
 const GL_CLAMP_TO_EDGE = 0x812F
@@ -352,9 +309,6 @@ const GL_MAJOR_VERSION = 0x821B
 const GL_MINOR_VERSION = 0x821C
 const GL_NUM_EXTENSIONS = 0x821D
 const GL_CONTEXT_FLAGS = 0x821E
-const GL_BUFFER_IMMUTABLE_STORAGE = 0x821F
-const GL_BUFFER_STORAGE_FLAGS = 0x8220
-const GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED = 0x8221
 const GL_COMPRESSED_RED = 0x8225
 const GL_COMPRESSED_RG = 0x8226
 const GL_RG = 0x8227
@@ -379,27 +333,6 @@ const GL_RG16I = 0x8239
 const GL_RG16UI = 0x823A
 const GL_RG32I = 0x823B
 const GL_RG32UI = 0x823C
-const GL_DEBUG_OUTPUT_SYNCHRONOUS = 0x8242
-const GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH = 0x8243
-const GL_DEBUG_CALLBACK_FUNCTION = 0x8244
-const GL_DEBUG_CALLBACK_USER_PARAM = 0x8245
-const GL_DEBUG_SOURCE_API = 0x8246
-const GL_DEBUG_SOURCE_WINDOW_SYSTEM = 0x8247
-const GL_DEBUG_SOURCE_SHADER_COMPILER = 0x8248
-const GL_DEBUG_SOURCE_THIRD_PARTY = 0x8249
-const GL_DEBUG_SOURCE_APPLICATION = 0x824A
-const GL_DEBUG_SOURCE_OTHER = 0x824B
-const GL_DEBUG_TYPE_ERROR = 0x824C
-const GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR = 0x824D
-const GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR = 0x824E
-const GL_DEBUG_TYPE_PORTABILITY = 0x824F
-const GL_DEBUG_TYPE_PERFORMANCE = 0x8250
-const GL_DEBUG_TYPE_OTHER = 0x8251
-const GL_LOSE_CONTEXT_ON_RESET = 0x8252
-const GL_GUILTY_CONTEXT_RESET = 0x8253
-const GL_INNOCENT_CONTEXT_RESET = 0x8254
-const GL_UNKNOWN_CONTEXT_RESET = 0x8255
-const GL_RESET_NOTIFICATION_STRATEGY = 0x8256
 const GL_PROGRAM_BINARY_RETRIEVABLE_HINT = 0x8257
 const GL_PROGRAM_SEPARABLE = 0x8258
 const GL_ACTIVE_PROGRAM = 0x8259
@@ -410,157 +343,6 @@ const GL_VIEWPORT_BOUNDS_RANGE = 0x825D
 const GL_LAYER_PROVOKING_VERTEX = 0x825E
 const GL_VIEWPORT_INDEX_PROVOKING_VERTEX = 0x825F
 const GL_UNDEFINED_VERTEX = 0x8260
-const GL_NO_RESET_NOTIFICATION = 0x8261
-const GL_MAX_COMPUTE_SHARED_MEMORY_SIZE = 0x8262
-const GL_MAX_COMPUTE_UNIFORM_COMPONENTS = 0x8263
-const GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS = 0x8264
-const GL_MAX_COMPUTE_ATOMIC_COUNTERS = 0x8265
-const GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS = 0x8266
-const GL_COMPUTE_WORK_GROUP_SIZE = 0x8267
-const GL_DEBUG_TYPE_MARKER = 0x8268
-const GL_DEBUG_TYPE_PUSH_GROUP = 0x8269
-const GL_DEBUG_TYPE_POP_GROUP = 0x826A
-const GL_DEBUG_SEVERITY_NOTIFICATION = 0x826B
-const GL_MAX_DEBUG_GROUP_STACK_DEPTH = 0x826C
-const GL_DEBUG_GROUP_STACK_DEPTH = 0x826D
-const GL_MAX_UNIFORM_LOCATIONS = 0x826E
-const GL_INTERNALFORMAT_SUPPORTED = 0x826F
-const GL_INTERNALFORMAT_PREFERRED = 0x8270
-const GL_INTERNALFORMAT_RED_SIZE = 0x8271
-const GL_INTERNALFORMAT_GREEN_SIZE = 0x8272
-const GL_INTERNALFORMAT_BLUE_SIZE = 0x8273
-const GL_INTERNALFORMAT_ALPHA_SIZE = 0x8274
-const GL_INTERNALFORMAT_DEPTH_SIZE = 0x8275
-const GL_INTERNALFORMAT_STENCIL_SIZE = 0x8276
-const GL_INTERNALFORMAT_SHARED_SIZE = 0x8277
-const GL_INTERNALFORMAT_RED_TYPE = 0x8278
-const GL_INTERNALFORMAT_GREEN_TYPE = 0x8279
-const GL_INTERNALFORMAT_BLUE_TYPE = 0x827A
-const GL_INTERNALFORMAT_ALPHA_TYPE = 0x827B
-const GL_INTERNALFORMAT_DEPTH_TYPE = 0x827C
-const GL_INTERNALFORMAT_STENCIL_TYPE = 0x827D
-const GL_MAX_WIDTH = 0x827E
-const GL_MAX_HEIGHT = 0x827F
-const GL_MAX_DEPTH = 0x8280
-const GL_MAX_LAYERS = 0x8281
-const GL_MAX_COMBINED_DIMENSIONS = 0x8282
-const GL_COLOR_COMPONENTS = 0x8283
-const GL_DEPTH_COMPONENTS = 0x8284
-const GL_STENCIL_COMPONENTS = 0x8285
-const GL_COLOR_RENDERABLE = 0x8286
-const GL_DEPTH_RENDERABLE = 0x8287
-const GL_STENCIL_RENDERABLE = 0x8288
-const GL_FRAMEBUFFER_RENDERABLE = 0x8289
-const GL_FRAMEBUFFER_RENDERABLE_LAYERED = 0x828A
-const GL_FRAMEBUFFER_BLEND = 0x828B
-const GL_READ_PIXELS = 0x828C
-const GL_READ_PIXELS_FORMAT = 0x828D
-const GL_READ_PIXELS_TYPE = 0x828E
-const GL_TEXTURE_IMAGE_FORMAT = 0x828F
-const GL_TEXTURE_IMAGE_TYPE = 0x8290
-const GL_GET_TEXTURE_IMAGE_FORMAT = 0x8291
-const GL_GET_TEXTURE_IMAGE_TYPE = 0x8292
-const GL_MIPMAP = 0x8293
-const GL_MANUAL_GENERATE_MIPMAP = 0x8294
-const GL_AUTO_GENERATE_MIPMAP = 0x8295
-const GL_COLOR_ENCODING = 0x8296
-const GL_SRGB_READ = 0x8297
-const GL_SRGB_WRITE = 0x8298
-const GL_FILTER = 0x829A
-const GL_VERTEX_TEXTURE = 0x829B
-const GL_TESS_CONTROL_TEXTURE = 0x829C
-const GL_TESS_EVALUATION_TEXTURE = 0x829D
-const GL_GEOMETRY_TEXTURE = 0x829E
-const GL_FRAGMENT_TEXTURE = 0x829F
-const GL_COMPUTE_TEXTURE = 0x82A0
-const GL_TEXTURE_SHADOW = 0x82A1
-const GL_TEXTURE_GATHER = 0x82A2
-const GL_TEXTURE_GATHER_SHADOW = 0x82A3
-const GL_SHADER_IMAGE_LOAD = 0x82A4
-const GL_SHADER_IMAGE_STORE = 0x82A5
-const GL_SHADER_IMAGE_ATOMIC = 0x82A6
-const GL_IMAGE_TEXEL_SIZE = 0x82A7
-const GL_IMAGE_COMPATIBILITY_CLASS = 0x82A8
-const GL_IMAGE_PIXEL_FORMAT = 0x82A9
-const GL_IMAGE_PIXEL_TYPE = 0x82AA
-const GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST = 0x82AC
-const GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST = 0x82AD
-const GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE = 0x82AE
-const GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE = 0x82AF
-const GL_TEXTURE_COMPRESSED_BLOCK_WIDTH = 0x82B1
-const GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT = 0x82B2
-const GL_TEXTURE_COMPRESSED_BLOCK_SIZE = 0x82B3
-const GL_CLEAR_BUFFER = 0x82B4
-const GL_TEXTURE_VIEW = 0x82B5
-const GL_VIEW_COMPATIBILITY_CLASS = 0x82B6
-const GL_FULL_SUPPORT = 0x82B7
-const GL_CAVEAT_SUPPORT = 0x82B8
-const GL_IMAGE_CLASS_4_X_32 = 0x82B9
-const GL_IMAGE_CLASS_2_X_32 = 0x82BA
-const GL_IMAGE_CLASS_1_X_32 = 0x82BB
-const GL_IMAGE_CLASS_4_X_16 = 0x82BC
-const GL_IMAGE_CLASS_2_X_16 = 0x82BD
-const GL_IMAGE_CLASS_1_X_16 = 0x82BE
-const GL_IMAGE_CLASS_4_X_8 = 0x82BF
-const GL_IMAGE_CLASS_2_X_8 = 0x82C0
-const GL_IMAGE_CLASS_1_X_8 = 0x82C1
-const GL_IMAGE_CLASS_11_11_10 = 0x82C2
-const GL_IMAGE_CLASS_10_10_10_2 = 0x82C3
-const GL_VIEW_CLASS_128_BITS = 0x82C4
-const GL_VIEW_CLASS_96_BITS = 0x82C5
-const GL_VIEW_CLASS_64_BITS = 0x82C6
-const GL_VIEW_CLASS_48_BITS = 0x82C7
-const GL_VIEW_CLASS_32_BITS = 0x82C8
-const GL_VIEW_CLASS_24_BITS = 0x82C9
-const GL_VIEW_CLASS_16_BITS = 0x82CA
-const GL_VIEW_CLASS_8_BITS = 0x82CB
-const GL_VIEW_CLASS_S3TC_DXT1_RGB = 0x82CC
-const GL_VIEW_CLASS_S3TC_DXT1_RGBA = 0x82CD
-const GL_VIEW_CLASS_S3TC_DXT3_RGBA = 0x82CE
-const GL_VIEW_CLASS_S3TC_DXT5_RGBA = 0x82CF
-const GL_VIEW_CLASS_RGTC1_RED = 0x82D0
-const GL_VIEW_CLASS_RGTC2_RG = 0x82D1
-const GL_VIEW_CLASS_BPTC_UNORM = 0x82D2
-const GL_VIEW_CLASS_BPTC_FLOAT = 0x82D3
-const GL_VERTEX_ATTRIB_BINDING = 0x82D4
-const GL_VERTEX_ATTRIB_RELATIVE_OFFSET = 0x82D5
-const GL_VERTEX_BINDING_DIVISOR = 0x82D6
-const GL_VERTEX_BINDING_OFFSET = 0x82D7
-const GL_VERTEX_BINDING_STRIDE = 0x82D8
-const GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET = 0x82D9
-const GL_MAX_VERTEX_ATTRIB_BINDINGS = 0x82DA
-const GL_TEXTURE_VIEW_MIN_LEVEL = 0x82DB
-const GL_TEXTURE_VIEW_NUM_LEVELS = 0x82DC
-const GL_TEXTURE_VIEW_MIN_LAYER = 0x82DD
-const GL_TEXTURE_VIEW_NUM_LAYERS = 0x82DE
-const GL_TEXTURE_IMMUTABLE_LEVELS = 0x82DF
-const GL_BUFFER = 0x82E0
-const GL_SHADER = 0x82E1
-const GL_PROGRAM = 0x82E2
-const GL_QUERY = 0x82E3
-const GL_PROGRAM_PIPELINE = 0x82E4
-const GL_MAX_VERTEX_ATTRIB_STRIDE = 0x82E5
-const GL_SAMPLER = 0x82E6
-const GL_DISPLAY_LIST = 0x82E7
-const GL_MAX_LABEL_LENGTH = 0x82E8
-const GL_NUM_SHADING_LANGUAGE_VERSIONS = 0x82E9
-const GL_QUERY_TARGET = 0x82EA
-const GL_TRANSFORM_FEEDBACK_OVERFLOW = 0x82EC
-const GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW = 0x82ED
-const GL_VERTICES_SUBMITTED = 0x82EE
-const GL_PRIMITIVES_SUBMITTED = 0x82EF
-const GL_VERTEX_SHADER_INVOCATIONS = 0x82F0
-const GL_TESS_CONTROL_SHADER_PATCHES = 0x82F1
-const GL_TESS_EVALUATION_SHADER_INVOCATIONS = 0x82F2
-const GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED = 0x82F3
-const GL_FRAGMENT_SHADER_INVOCATIONS = 0x82F4
-const GL_COMPUTE_SHADER_INVOCATIONS = 0x82F5
-const GL_CLIPPING_INPUT_PRIMITIVES = 0x82F6
-const GL_CLIPPING_OUTPUT_PRIMITIVES = 0x82F7
-const GL_MAX_CULL_DISTANCES = 0x82F9
-const GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES = 0x82FA
-const GL_CONTEXT_RELEASE_BEHAVIOR = 0x82FB
-const GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH = 0x82FC
 const GL_UNSIGNED_BYTE_2_3_3_REV = 0x8362
 const GL_UNSIGNED_SHORT_5_6_5 = 0x8363
 const GL_UNSIGNED_SHORT_5_6_5_REV = 0x8364
@@ -616,8 +398,6 @@ const GL_MAX_RECTANGLE_TEXTURE_SIZE = 0x84F8
 const GL_DEPTH_STENCIL = 0x84F9
 const GL_UNSIGNED_INT_24_8 = 0x84FA
 const GL_MAX_TEXTURE_LOD_BIAS = 0x84FD
-const GL_TEXTURE_MAX_ANISOTROPY = 0x84FE
-const GL_MAX_TEXTURE_MAX_ANISOTROPY = 0x84FF
 const GL_TEXTURE_LOD_BIAS = 0x8501
 const GL_INCR_WRAP = 0x8507
 const GL_DECR_WRAP = 0x8508
@@ -647,8 +427,6 @@ const GL_TEXTURE_COMPRESSED = 0x86A1
 const GL_NUM_COMPRESSED_TEXTURE_FORMATS = 0x86A2
 const GL_COMPRESSED_TEXTURE_FORMATS = 0x86A3
 const GL_PROGRAM_BINARY_LENGTH = 0x8741
-const GL_MIRROR_CLAMP_TO_EDGE = 0x8743
-const GL_VERTEX_ATTRIB_ARRAY_LONG = 0x874E
 const GL_BUFFER_SIZE = 0x8764
 const GL_BUFFER_USAGE = 0x8765
 const GL_NUM_PROGRAM_BINARY_FORMATS = 0x87FE
@@ -835,7 +613,6 @@ const GL_TEXTURE_BINDING_1D_ARRAY = 0x8C1C
 const GL_TEXTURE_BINDING_2D_ARRAY = 0x8C1D
 const GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS = 0x8C29
 const GL_TEXTURE_BUFFER = 0x8C2A
-const GL_TEXTURE_BUFFER_BINDING = 0x8C2A
 const GL_MAX_TEXTURE_BUFFER_SIZE = 0x8C2B
 const GL_TEXTURE_BINDING_BUFFER = 0x8C2C
 const GL_TEXTURE_BUFFER_DATA_STORE_BINDING = 0x8C2D
@@ -947,9 +724,6 @@ const GL_RENDERBUFFER_STENCIL_SIZE = 0x8D55
 const GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE = 0x8D56
 const GL_MAX_SAMPLES = 0x8D57
 const GL_RGB565 = 0x8D62
-const GL_PRIMITIVE_RESTART_FIXED_INDEX = 0x8D69
-const GL_ANY_SAMPLES_PASSED_CONSERVATIVE = 0x8D6A
-const GL_MAX_ELEMENT_INDEX = 0x8D6B
 const GL_RGBA32UI = 0x8D70
 const GL_RGB32UI = 0x8D71
 const GL_RGBA16UI = 0x8D76
@@ -1027,18 +801,11 @@ const GL_QUERY_WAIT = 0x8E13
 const GL_QUERY_NO_WAIT = 0x8E14
 const GL_QUERY_BY_REGION_WAIT = 0x8E15
 const GL_QUERY_BY_REGION_NO_WAIT = 0x8E16
-const GL_QUERY_WAIT_INVERTED = 0x8E17
-const GL_QUERY_NO_WAIT_INVERTED = 0x8E18
-const GL_QUERY_BY_REGION_WAIT_INVERTED = 0x8E19
-const GL_QUERY_BY_REGION_NO_WAIT_INVERTED = 0x8E1A
-const GL_POLYGON_OFFSET_CLAMP = 0x8E1B
 const GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS = 0x8E1E
 const GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS = 0x8E1F
 const GL_TRANSFORM_FEEDBACK = 0x8E22
 const GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED = 0x8E23
-const GL_TRANSFORM_FEEDBACK_PAUSED = 0x8E23
 const GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE = 0x8E24
-const GL_TRANSFORM_FEEDBACK_ACTIVE = 0x8E24
 const GL_TRANSFORM_FEEDBACK_BINDING = 0x8E25
 const GL_TIMESTAMP = 0x8E28
 const GL_TEXTURE_SWIZZLE_R = 0x8E42
@@ -1092,22 +859,8 @@ const GL_TESS_EVALUATION_SHADER = 0x8E87
 const GL_TESS_CONTROL_SHADER = 0x8E88
 const GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS = 0x8E89
 const GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS = 0x8E8A
-const GL_COMPRESSED_RGBA_BPTC_UNORM = 0x8E8C
-const GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM = 0x8E8D
-const GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT = 0x8E8E
-const GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT = 0x8E8F
 const GL_COPY_READ_BUFFER = 0x8F36
-const GL_COPY_READ_BUFFER_BINDING = 0x8F36
 const GL_COPY_WRITE_BUFFER = 0x8F37
-const GL_COPY_WRITE_BUFFER_BINDING = 0x8F37
-const GL_MAX_IMAGE_UNITS = 0x8F38
-const GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS = 0x8F39
-const GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES = 0x8F39
-const GL_IMAGE_BINDING_NAME = 0x8F3A
-const GL_IMAGE_BINDING_LEVEL = 0x8F3B
-const GL_IMAGE_BINDING_LAYERED = 0x8F3C
-const GL_IMAGE_BINDING_LAYER = 0x8F3D
-const GL_IMAGE_BINDING_ACCESS = 0x8F3E
 const GL_DRAW_INDIRECT_BUFFER = 0x8F3F
 const GL_DRAW_INDIRECT_BUFFER_BINDING = 0x8F43
 const GL_DOUBLE_MAT2 = 0x8F46
@@ -1119,7 +872,6 @@ const GL_DOUBLE_MAT3x2 = 0x8F4B
 const GL_DOUBLE_MAT3x4 = 0x8F4C
 const GL_DOUBLE_MAT4x2 = 0x8F4D
 const GL_DOUBLE_MAT4x3 = 0x8F4E
-const GL_VERTEX_BINDING_BUFFER = 0x8F4F
 const GL_R8_SNORM = 0x8F94
 const GL_RG8_SNORM = 0x8F95
 const GL_RGB8_SNORM = 0x8F96
@@ -1141,72 +893,7 @@ const GL_SAMPLER_CUBE_MAP_ARRAY = 0x900C
 const GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW = 0x900D
 const GL_INT_SAMPLER_CUBE_MAP_ARRAY = 0x900E
 const GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY = 0x900F
-const GL_IMAGE_1D = 0x904C
-const GL_IMAGE_2D = 0x904D
-const GL_IMAGE_3D = 0x904E
-const GL_IMAGE_2D_RECT = 0x904F
-const GL_IMAGE_CUBE = 0x9050
-const GL_IMAGE_BUFFER = 0x9051
-const GL_IMAGE_1D_ARRAY = 0x9052
-const GL_IMAGE_2D_ARRAY = 0x9053
-const GL_IMAGE_CUBE_MAP_ARRAY = 0x9054
-const GL_IMAGE_2D_MULTISAMPLE = 0x9055
-const GL_IMAGE_2D_MULTISAMPLE_ARRAY = 0x9056
-const GL_INT_IMAGE_1D = 0x9057
-const GL_INT_IMAGE_2D = 0x9058
-const GL_INT_IMAGE_3D = 0x9059
-const GL_INT_IMAGE_2D_RECT = 0x905A
-const GL_INT_IMAGE_CUBE = 0x905B
-const GL_INT_IMAGE_BUFFER = 0x905C
-const GL_INT_IMAGE_1D_ARRAY = 0x905D
-const GL_INT_IMAGE_2D_ARRAY = 0x905E
-const GL_INT_IMAGE_CUBE_MAP_ARRAY = 0x905F
-const GL_INT_IMAGE_2D_MULTISAMPLE = 0x9060
-const GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY = 0x9061
-const GL_UNSIGNED_INT_IMAGE_1D = 0x9062
-const GL_UNSIGNED_INT_IMAGE_2D = 0x9063
-const GL_UNSIGNED_INT_IMAGE_3D = 0x9064
-const GL_UNSIGNED_INT_IMAGE_2D_RECT = 0x9065
-const GL_UNSIGNED_INT_IMAGE_CUBE = 0x9066
-const GL_UNSIGNED_INT_IMAGE_BUFFER = 0x9067
-const GL_UNSIGNED_INT_IMAGE_1D_ARRAY = 0x9068
-const GL_UNSIGNED_INT_IMAGE_2D_ARRAY = 0x9069
-const GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY = 0x906A
-const GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE = 0x906B
-const GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY = 0x906C
-const GL_MAX_IMAGE_SAMPLES = 0x906D
-const GL_IMAGE_BINDING_FORMAT = 0x906E
 const GL_RGB10_A2UI = 0x906F
-const GL_MIN_MAP_BUFFER_ALIGNMENT = 0x90BC
-const GL_IMAGE_FORMAT_COMPATIBILITY_TYPE = 0x90C7
-const GL_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE = 0x90C8
-const GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS = 0x90C9
-const GL_MAX_VERTEX_IMAGE_UNIFORMS = 0x90CA
-const GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS = 0x90CB
-const GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS = 0x90CC
-const GL_MAX_GEOMETRY_IMAGE_UNIFORMS = 0x90CD
-const GL_MAX_FRAGMENT_IMAGE_UNIFORMS = 0x90CE
-const GL_MAX_COMBINED_IMAGE_UNIFORMS = 0x90CF
-const GL_SHADER_STORAGE_BUFFER = 0x90D2
-const GL_SHADER_STORAGE_BUFFER_BINDING = 0x90D3
-const GL_SHADER_STORAGE_BUFFER_START = 0x90D4
-const GL_SHADER_STORAGE_BUFFER_SIZE = 0x90D5
-const GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS = 0x90D6
-const GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS = 0x90D7
-const GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS = 0x90D8
-const GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS = 0x90D9
-const GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS = 0x90DA
-const GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS = 0x90DB
-const GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS = 0x90DC
-const GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS = 0x90DD
-const GL_MAX_SHADER_STORAGE_BLOCK_SIZE = 0x90DE
-const GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT = 0x90DF
-const GL_DEPTH_STENCIL_TEXTURE_MODE = 0x90EA
-const GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS = 0x90EB
-const GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER = 0x90EC
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER = 0x90ED
-const GL_DISPATCH_INDIRECT_BUFFER = 0x90EE
-const GL_DISPATCH_INDIRECT_BUFFER_BINDING = 0x90EF
 const GL_TEXTURE_2D_MULTISAMPLE = 0x9100
 const GL_PROXY_TEXTURE_2D_MULTISAMPLE = 0x9101
 const GL_TEXTURE_2D_MULTISAMPLE_ARRAY = 0x9102
@@ -1245,142 +932,6 @@ const GL_MAX_GEOMETRY_INPUT_COMPONENTS = 0x9123
 const GL_MAX_GEOMETRY_OUTPUT_COMPONENTS = 0x9124
 const GL_MAX_FRAGMENT_INPUT_COMPONENTS = 0x9125
 const GL_CONTEXT_PROFILE_MASK = 0x9126
-const GL_UNPACK_COMPRESSED_BLOCK_WIDTH = 0x9127
-const GL_UNPACK_COMPRESSED_BLOCK_HEIGHT = 0x9128
-const GL_UNPACK_COMPRESSED_BLOCK_DEPTH = 0x9129
-const GL_UNPACK_COMPRESSED_BLOCK_SIZE = 0x912A
-const GL_PACK_COMPRESSED_BLOCK_WIDTH = 0x912B
-const GL_PACK_COMPRESSED_BLOCK_HEIGHT = 0x912C
-const GL_PACK_COMPRESSED_BLOCK_DEPTH = 0x912D
-const GL_PACK_COMPRESSED_BLOCK_SIZE = 0x912E
-const GL_TEXTURE_IMMUTABLE_FORMAT = 0x912F
-const GL_MAX_DEBUG_MESSAGE_LENGTH = 0x9143
-const GL_MAX_DEBUG_LOGGED_MESSAGES = 0x9144
-const GL_DEBUG_LOGGED_MESSAGES = 0x9145
-const GL_DEBUG_SEVERITY_HIGH = 0x9146
-const GL_DEBUG_SEVERITY_MEDIUM = 0x9147
-const GL_DEBUG_SEVERITY_LOW = 0x9148
-const GL_QUERY_BUFFER = 0x9192
-const GL_QUERY_BUFFER_BINDING = 0x9193
-const GL_QUERY_RESULT_NO_WAIT = 0x9194
-const GL_TEXTURE_BUFFER_OFFSET = 0x919D
-const GL_TEXTURE_BUFFER_SIZE = 0x919E
-const GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT = 0x919F
-const GL_COMPUTE_SHADER = 0x91B9
-const GL_MAX_COMPUTE_UNIFORM_BLOCKS = 0x91BB
-const GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS = 0x91BC
-const GL_MAX_COMPUTE_IMAGE_UNIFORMS = 0x91BD
-const GL_MAX_COMPUTE_WORK_GROUP_COUNT = 0x91BE
-const GL_MAX_COMPUTE_WORK_GROUP_SIZE = 0x91BF
-const GL_COMPRESSED_R11_EAC = 0x9270
-const GL_COMPRESSED_SIGNED_R11_EAC = 0x9271
-const GL_COMPRESSED_RG11_EAC = 0x9272
-const GL_COMPRESSED_SIGNED_RG11_EAC = 0x9273
-const GL_COMPRESSED_RGB8_ETC2 = 0x9274
-const GL_COMPRESSED_SRGB8_ETC2 = 0x9275
-const GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 = 0x9276
-const GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 = 0x9277
-const GL_COMPRESSED_RGBA8_ETC2_EAC = 0x9278
-const GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC = 0x9279
-const GL_ATOMIC_COUNTER_BUFFER = 0x92C0
-const GL_ATOMIC_COUNTER_BUFFER_BINDING = 0x92C1
-const GL_ATOMIC_COUNTER_BUFFER_START = 0x92C2
-const GL_ATOMIC_COUNTER_BUFFER_SIZE = 0x92C3
-const GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE = 0x92C4
-const GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS = 0x92C5
-const GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES = 0x92C6
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER = 0x92C7
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER = 0x92C8
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER = 0x92C9
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER = 0x92CA
-const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER = 0x92CB
-const GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS = 0x92CC
-const GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS = 0x92CD
-const GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS = 0x92CE
-const GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS = 0x92CF
-const GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS = 0x92D0
-const GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS = 0x92D1
-const GL_MAX_VERTEX_ATOMIC_COUNTERS = 0x92D2
-const GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS = 0x92D3
-const GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS = 0x92D4
-const GL_MAX_GEOMETRY_ATOMIC_COUNTERS = 0x92D5
-const GL_MAX_FRAGMENT_ATOMIC_COUNTERS = 0x92D6
-const GL_MAX_COMBINED_ATOMIC_COUNTERS = 0x92D7
-const GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE = 0x92D8
-const GL_ACTIVE_ATOMIC_COUNTER_BUFFERS = 0x92D9
-const GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX = 0x92DA
-const GL_UNSIGNED_INT_ATOMIC_COUNTER = 0x92DB
-const GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS = 0x92DC
-const GL_DEBUG_OUTPUT = 0x92E0
-const GL_UNIFORM = 0x92E1
-const GL_UNIFORM_BLOCK = 0x92E2
-const GL_PROGRAM_INPUT = 0x92E3
-const GL_PROGRAM_OUTPUT = 0x92E4
-const GL_BUFFER_VARIABLE = 0x92E5
-const GL_SHADER_STORAGE_BLOCK = 0x92E6
-const GL_IS_PER_PATCH = 0x92E7
-const GL_VERTEX_SUBROUTINE = 0x92E8
-const GL_TESS_CONTROL_SUBROUTINE = 0x92E9
-const GL_TESS_EVALUATION_SUBROUTINE = 0x92EA
-const GL_GEOMETRY_SUBROUTINE = 0x92EB
-const GL_FRAGMENT_SUBROUTINE = 0x92EC
-const GL_COMPUTE_SUBROUTINE = 0x92ED
-const GL_VERTEX_SUBROUTINE_UNIFORM = 0x92EE
-const GL_TESS_CONTROL_SUBROUTINE_UNIFORM = 0x92EF
-const GL_TESS_EVALUATION_SUBROUTINE_UNIFORM = 0x92F0
-const GL_GEOMETRY_SUBROUTINE_UNIFORM = 0x92F1
-const GL_FRAGMENT_SUBROUTINE_UNIFORM = 0x92F2
-const GL_COMPUTE_SUBROUTINE_UNIFORM = 0x92F3
-const GL_TRANSFORM_FEEDBACK_VARYING = 0x92F4
-const GL_ACTIVE_RESOURCES = 0x92F5
-const GL_MAX_NAME_LENGTH = 0x92F6
-const GL_MAX_NUM_ACTIVE_VARIABLES = 0x92F7
-const GL_MAX_NUM_COMPATIBLE_SUBROUTINES = 0x92F8
-const GL_NAME_LENGTH = 0x92F9
-const GL_TYPE = 0x92FA
-const GL_ARRAY_SIZE = 0x92FB
-const GL_OFFSET = 0x92FC
-const GL_BLOCK_INDEX = 0x92FD
-const GL_ARRAY_STRIDE = 0x92FE
-const GL_MATRIX_STRIDE = 0x92FF
-const GL_IS_ROW_MAJOR = 0x9300
-const GL_ATOMIC_COUNTER_BUFFER_INDEX = 0x9301
-const GL_BUFFER_BINDING = 0x9302
-const GL_BUFFER_DATA_SIZE = 0x9303
-const GL_NUM_ACTIVE_VARIABLES = 0x9304
-const GL_ACTIVE_VARIABLES = 0x9305
-const GL_REFERENCED_BY_VERTEX_SHADER = 0x9306
-const GL_REFERENCED_BY_TESS_CONTROL_SHADER = 0x9307
-const GL_REFERENCED_BY_TESS_EVALUATION_SHADER = 0x9308
-const GL_REFERENCED_BY_GEOMETRY_SHADER = 0x9309
-const GL_REFERENCED_BY_FRAGMENT_SHADER = 0x930A
-const GL_REFERENCED_BY_COMPUTE_SHADER = 0x930B
-const GL_TOP_LEVEL_ARRAY_SIZE = 0x930C
-const GL_TOP_LEVEL_ARRAY_STRIDE = 0x930D
-const GL_LOCATION = 0x930E
-const GL_LOCATION_INDEX = 0x930F
-const GL_FRAMEBUFFER_DEFAULT_WIDTH = 0x9310
-const GL_FRAMEBUFFER_DEFAULT_HEIGHT = 0x9311
-const GL_FRAMEBUFFER_DEFAULT_LAYERS = 0x9312
-const GL_FRAMEBUFFER_DEFAULT_SAMPLES = 0x9313
-const GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS = 0x9314
-const GL_MAX_FRAMEBUFFER_WIDTH = 0x9315
-const GL_MAX_FRAMEBUFFER_HEIGHT = 0x9316
-const GL_MAX_FRAMEBUFFER_LAYERS = 0x9317
-const GL_MAX_FRAMEBUFFER_SAMPLES = 0x9318
-const GL_LOCATION_COMPONENT = 0x934A
-const GL_TRANSFORM_FEEDBACK_BUFFER_INDEX = 0x934B
-const GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE = 0x934C
-const GL_CLIP_ORIGIN = 0x935C
-const GL_CLIP_DEPTH_MODE = 0x935D
-const GL_NEGATIVE_ONE_TO_ONE = 0x935E
-const GL_ZERO_TO_ONE = 0x935F
-const GL_CLEAR_TEXTURE = 0x9365
-const GL_NUM_SAMPLE_COUNTS = 0x9380
-const GL_SHADER_BINARY_FORMAT_SPIR_V = 0x9551
-const GL_SPIR_V_BINARY = 0x9552
-const GL_SPIR_V_EXTENSIONS = 0x9553
-const GL_NUM_SPIR_V_EXTENSIONS = 0x9554
 
 // OpenGL function pointers definitions
 struct Context {
@@ -1395,24 +946,15 @@ struct Context {
 	glBindBuffer ?[*]u8
 	glBindBufferBase ?[*]u8
 	glBindBufferRange ?[*]u8
-	glBindBuffersBase ?[*]u8
-	glBindBuffersRange ?[*]u8
 	glBindFragDataLocation ?[*]u8
 	glBindFragDataLocationIndexed ?[*]u8
 	glBindFramebuffer ?[*]u8
-	glBindImageTexture ?[*]u8
-	glBindImageTextures ?[*]u8
 	glBindProgramPipeline ?[*]u8
 	glBindRenderbuffer ?[*]u8
 	glBindSampler ?[*]u8
-	glBindSamplers ?[*]u8
 	glBindTexture ?[*]u8
-	glBindTextureUnit ?[*]u8
-	glBindTextures ?[*]u8
 	glBindTransformFeedback ?[*]u8
 	glBindVertexArray ?[*]u8
-	glBindVertexBuffer ?[*]u8
-	glBindVertexBuffers ?[*]u8
 	glBlendColor ?[*]u8
 	glBlendEquation ?[*]u8
 	glBlendEquationSeparate ?[*]u8
@@ -1423,16 +965,11 @@ struct Context {
 	glBlendFuncSeparatei ?[*]u8
 	glBlendFunci ?[*]u8
 	glBlitFramebuffer ?[*]u8
-	glBlitNamedFramebuffer ?[*]u8
 	glBufferData ?[*]u8
-	glBufferStorage ?[*]u8
 	glBufferSubData ?[*]u8
 	glCheckFramebufferStatus ?[*]u8
-	glCheckNamedFramebufferStatus ?[*]u8
 	glClampColor ?[*]u8
 	glClear ?[*]u8
-	glClearBufferData ?[*]u8
-	glClearBufferSubData ?[*]u8
 	glClearBufferfi ?[*]u8
 	glClearBufferfv ?[*]u8
 	glClearBufferiv ?[*]u8
@@ -1440,17 +977,8 @@ struct Context {
 	glClearColor ?[*]u8
 	glClearDepth ?[*]u8
 	glClearDepthf ?[*]u8
-	glClearNamedBufferData ?[*]u8
-	glClearNamedBufferSubData ?[*]u8
-	glClearNamedFramebufferfi ?[*]u8
-	glClearNamedFramebufferfv ?[*]u8
-	glClearNamedFramebufferiv ?[*]u8
-	glClearNamedFramebufferuiv ?[*]u8
 	glClearStencil ?[*]u8
-	glClearTexImage ?[*]u8
-	glClearTexSubImage ?[*]u8
 	glClientWaitSync ?[*]u8
-	glClipControl ?[*]u8
 	glColorMask ?[*]u8
 	glColorMaski ?[*]u8
 	glColorP3ui ?[*]u8
@@ -1464,36 +992,16 @@ struct Context {
 	glCompressedTexSubImage1D ?[*]u8
 	glCompressedTexSubImage2D ?[*]u8
 	glCompressedTexSubImage3D ?[*]u8
-	glCompressedTextureSubImage1D ?[*]u8
-	glCompressedTextureSubImage2D ?[*]u8
-	glCompressedTextureSubImage3D ?[*]u8
 	glCopyBufferSubData ?[*]u8
-	glCopyImageSubData ?[*]u8
-	glCopyNamedBufferSubData ?[*]u8
 	glCopyTexImage1D ?[*]u8
 	glCopyTexImage2D ?[*]u8
 	glCopyTexSubImage1D ?[*]u8
 	glCopyTexSubImage2D ?[*]u8
 	glCopyTexSubImage3D ?[*]u8
-	glCopyTextureSubImage1D ?[*]u8
-	glCopyTextureSubImage2D ?[*]u8
-	glCopyTextureSubImage3D ?[*]u8
-	glCreateBuffers ?[*]u8
-	glCreateFramebuffers ?[*]u8
 	glCreateProgram ?[*]u8
-	glCreateProgramPipelines ?[*]u8
-	glCreateQueries ?[*]u8
-	glCreateRenderbuffers ?[*]u8
-	glCreateSamplers ?[*]u8
 	glCreateShader ?[*]u8
 	glCreateShaderProgramv ?[*]u8
-	glCreateTextures ?[*]u8
-	glCreateTransformFeedbacks ?[*]u8
-	glCreateVertexArrays ?[*]u8
 	glCullFace ?[*]u8
-	glDebugMessageCallback ?[*]u8
-	glDebugMessageControl ?[*]u8
-	glDebugMessageInsert ?[*]u8
 	glDeleteBuffers ?[*]u8
 	glDeleteFramebuffers ?[*]u8
 	glDeleteProgram ?[*]u8
@@ -1514,32 +1022,23 @@ struct Context {
 	glDepthRangef ?[*]u8
 	glDetachShader ?[*]u8
 	glDisable ?[*]u8
-	glDisableVertexArrayAttrib ?[*]u8
 	glDisableVertexAttribArray ?[*]u8
 	glDisablei ?[*]u8
-	glDispatchCompute ?[*]u8
-	glDispatchComputeIndirect ?[*]u8
 	glDrawArrays ?[*]u8
 	glDrawArraysIndirect ?[*]u8
 	glDrawArraysInstanced ?[*]u8
-	glDrawArraysInstancedBaseInstance ?[*]u8
 	glDrawBuffer ?[*]u8
 	glDrawBuffers ?[*]u8
 	glDrawElements ?[*]u8
 	glDrawElementsBaseVertex ?[*]u8
 	glDrawElementsIndirect ?[*]u8
 	glDrawElementsInstanced ?[*]u8
-	glDrawElementsInstancedBaseInstance ?[*]u8
 	glDrawElementsInstancedBaseVertex ?[*]u8
-	glDrawElementsInstancedBaseVertexBaseInstance ?[*]u8
 	glDrawRangeElements ?[*]u8
 	glDrawRangeElementsBaseVertex ?[*]u8
 	glDrawTransformFeedback ?[*]u8
-	glDrawTransformFeedbackInstanced ?[*]u8
 	glDrawTransformFeedbackStream ?[*]u8
-	glDrawTransformFeedbackStreamInstanced ?[*]u8
 	glEnable ?[*]u8
-	glEnableVertexArrayAttrib ?[*]u8
 	glEnableVertexAttribArray ?[*]u8
 	glEnablei ?[*]u8
 	glEndConditionalRender ?[*]u8
@@ -1550,8 +1049,6 @@ struct Context {
 	glFinish ?[*]u8
 	glFlush ?[*]u8
 	glFlushMappedBufferRange ?[*]u8
-	glFlushMappedNamedBufferRange ?[*]u8
-	glFramebufferParameteri ?[*]u8
 	glFramebufferRenderbuffer ?[*]u8
 	glFramebufferTexture ?[*]u8
 	glFramebufferTexture1D ?[*]u8
@@ -1569,8 +1066,6 @@ struct Context {
 	glGenTransformFeedbacks ?[*]u8
 	glGenVertexArrays ?[*]u8
 	glGenerateMipmap ?[*]u8
-	glGenerateTextureMipmap ?[*]u8
-	glGetActiveAtomicCounterBufferiv ?[*]u8
 	glGetActiveAttrib ?[*]u8
 	glGetActiveSubroutineName ?[*]u8
 	glGetActiveSubroutineUniformName ?[*]u8
@@ -1589,9 +1084,6 @@ struct Context {
 	glGetBufferPointerv ?[*]u8
 	glGetBufferSubData ?[*]u8
 	glGetCompressedTexImage ?[*]u8
-	glGetCompressedTextureImage ?[*]u8
-	glGetCompressedTextureSubImage ?[*]u8
-	glGetDebugMessageLog ?[*]u8
 	glGetDoublei_v ?[*]u8
 	glGetDoublev ?[*]u8
 	glGetError ?[*]u8
@@ -1600,41 +1092,17 @@ struct Context {
 	glGetFragDataIndex ?[*]u8
 	glGetFragDataLocation ?[*]u8
 	glGetFramebufferAttachmentParameteriv ?[*]u8
-	glGetFramebufferParameteriv ?[*]u8
-	glGetGraphicsResetStatus ?[*]u8
 	glGetInteger64i_v ?[*]u8
 	glGetInteger64v ?[*]u8
 	glGetIntegeri_v ?[*]u8
 	glGetIntegerv ?[*]u8
-	glGetInternalformati64v ?[*]u8
-	glGetInternalformativ ?[*]u8
 	glGetMultisamplefv ?[*]u8
-	glGetNamedBufferParameteri64v ?[*]u8
-	glGetNamedBufferParameteriv ?[*]u8
-	glGetNamedBufferPointerv ?[*]u8
-	glGetNamedBufferSubData ?[*]u8
-	glGetNamedFramebufferAttachmentParameteriv ?[*]u8
-	glGetNamedFramebufferParameteriv ?[*]u8
-	glGetNamedRenderbufferParameteriv ?[*]u8
-	glGetObjectLabel ?[*]u8
-	glGetObjectPtrLabel ?[*]u8
-	glGetPointerv ?[*]u8
 	glGetProgramBinary ?[*]u8
 	glGetProgramInfoLog ?[*]u8
-	glGetProgramInterfaceiv ?[*]u8
 	glGetProgramPipelineInfoLog ?[*]u8
 	glGetProgramPipelineiv ?[*]u8
-	glGetProgramResourceIndex ?[*]u8
-	glGetProgramResourceLocation ?[*]u8
-	glGetProgramResourceLocationIndex ?[*]u8
-	glGetProgramResourceName ?[*]u8
-	glGetProgramResourceiv ?[*]u8
 	glGetProgramStageiv ?[*]u8
 	glGetProgramiv ?[*]u8
-	glGetQueryBufferObjecti64v ?[*]u8
-	glGetQueryBufferObjectiv ?[*]u8
-	glGetQueryBufferObjectui64v ?[*]u8
-	glGetQueryBufferObjectuiv ?[*]u8
 	glGetQueryIndexediv ?[*]u8
 	glGetQueryObjecti64v ?[*]u8
 	glGetQueryObjectiv ?[*]u8
@@ -1662,18 +1130,7 @@ struct Context {
 	glGetTexParameterIuiv ?[*]u8
 	glGetTexParameterfv ?[*]u8
 	glGetTexParameteriv ?[*]u8
-	glGetTextureImage ?[*]u8
-	glGetTextureLevelParameterfv ?[*]u8
-	glGetTextureLevelParameteriv ?[*]u8
-	glGetTextureParameterIiv ?[*]u8
-	glGetTextureParameterIuiv ?[*]u8
-	glGetTextureParameterfv ?[*]u8
-	glGetTextureParameteriv ?[*]u8
-	glGetTextureSubImage ?[*]u8
 	glGetTransformFeedbackVarying ?[*]u8
-	glGetTransformFeedbacki64_v ?[*]u8
-	glGetTransformFeedbacki_v ?[*]u8
-	glGetTransformFeedbackiv ?[*]u8
 	glGetUniformBlockIndex ?[*]u8
 	glGetUniformIndices ?[*]u8
 	glGetUniformLocation ?[*]u8
@@ -1682,9 +1139,6 @@ struct Context {
 	glGetUniformfv ?[*]u8
 	glGetUniformiv ?[*]u8
 	glGetUniformuiv ?[*]u8
-	glGetVertexArrayIndexed64iv ?[*]u8
-	glGetVertexArrayIndexediv ?[*]u8
-	glGetVertexArrayiv ?[*]u8
 	glGetVertexAttribIiv ?[*]u8
 	glGetVertexAttribIuiv ?[*]u8
 	glGetVertexAttribLdv ?[*]u8
@@ -1692,33 +1146,7 @@ struct Context {
 	glGetVertexAttribdv ?[*]u8
 	glGetVertexAttribfv ?[*]u8
 	glGetVertexAttribiv ?[*]u8
-	glGetnColorTable ?[*]u8
-	glGetnCompressedTexImage ?[*]u8
-	glGetnConvolutionFilter ?[*]u8
-	glGetnHistogram ?[*]u8
-	glGetnMapdv ?[*]u8
-	glGetnMapfv ?[*]u8
-	glGetnMapiv ?[*]u8
-	glGetnMinmax ?[*]u8
-	glGetnPixelMapfv ?[*]u8
-	glGetnPixelMapuiv ?[*]u8
-	glGetnPixelMapusv ?[*]u8
-	glGetnPolygonStipple ?[*]u8
-	glGetnSeparableFilter ?[*]u8
-	glGetnTexImage ?[*]u8
-	glGetnUniformdv ?[*]u8
-	glGetnUniformfv ?[*]u8
-	glGetnUniformiv ?[*]u8
-	glGetnUniformuiv ?[*]u8
 	glHint ?[*]u8
-	glInvalidateBufferData ?[*]u8
-	glInvalidateBufferSubData ?[*]u8
-	glInvalidateFramebuffer ?[*]u8
-	glInvalidateNamedFramebufferData ?[*]u8
-	glInvalidateNamedFramebufferSubData ?[*]u8
-	glInvalidateSubFramebuffer ?[*]u8
-	glInvalidateTexImage ?[*]u8
-	glInvalidateTexSubImage ?[*]u8
 	glIsBuffer ?[*]u8
 	glIsEnabled ?[*]u8
 	glIsEnabledi ?[*]u8
@@ -1738,18 +1166,10 @@ struct Context {
 	glLogicOp ?[*]u8
 	glMapBuffer ?[*]u8
 	glMapBufferRange ?[*]u8
-	glMapNamedBuffer ?[*]u8
-	glMapNamedBufferRange ?[*]u8
-	glMemoryBarrier ?[*]u8
-	glMemoryBarrierByRegion ?[*]u8
 	glMinSampleShading ?[*]u8
 	glMultiDrawArrays ?[*]u8
-	glMultiDrawArraysIndirect ?[*]u8
-	glMultiDrawArraysIndirectCount ?[*]u8
 	glMultiDrawElements ?[*]u8
 	glMultiDrawElementsBaseVertex ?[*]u8
-	glMultiDrawElementsIndirect ?[*]u8
-	glMultiDrawElementsIndirectCount ?[*]u8
 	glMultiTexCoordP1ui ?[*]u8
 	glMultiTexCoordP1uiv ?[*]u8
 	glMultiTexCoordP2ui ?[*]u8
@@ -1758,22 +1178,8 @@ struct Context {
 	glMultiTexCoordP3uiv ?[*]u8
 	glMultiTexCoordP4ui ?[*]u8
 	glMultiTexCoordP4uiv ?[*]u8
-	glNamedBufferData ?[*]u8
-	glNamedBufferStorage ?[*]u8
-	glNamedBufferSubData ?[*]u8
-	glNamedFramebufferDrawBuffer ?[*]u8
-	glNamedFramebufferDrawBuffers ?[*]u8
-	glNamedFramebufferParameteri ?[*]u8
-	glNamedFramebufferReadBuffer ?[*]u8
-	glNamedFramebufferRenderbuffer ?[*]u8
-	glNamedFramebufferTexture ?[*]u8
-	glNamedFramebufferTextureLayer ?[*]u8
-	glNamedRenderbufferStorage ?[*]u8
-	glNamedRenderbufferStorageMultisample ?[*]u8
 	glNormalP3ui ?[*]u8
 	glNormalP3uiv ?[*]u8
-	glObjectLabel ?[*]u8
-	glObjectPtrLabel ?[*]u8
 	glPatchParameterfv ?[*]u8
 	glPatchParameteri ?[*]u8
 	glPauseTransformFeedback ?[*]u8
@@ -1786,8 +1192,6 @@ struct Context {
 	glPointSize ?[*]u8
 	glPolygonMode ?[*]u8
 	glPolygonOffset ?[*]u8
-	glPolygonOffsetClamp ?[*]u8
-	glPopDebugGroup ?[*]u8
 	glPrimitiveRestartIndex ?[*]u8
 	glProgramBinary ?[*]u8
 	glProgramParameteri ?[*]u8
@@ -1842,11 +1246,9 @@ struct Context {
 	glProgramUniformMatrix4x3dv ?[*]u8
 	glProgramUniformMatrix4x3fv ?[*]u8
 	glProvokingVertex ?[*]u8
-	glPushDebugGroup ?[*]u8
 	glQueryCounter ?[*]u8
 	glReadBuffer ?[*]u8
 	glReadPixels ?[*]u8
-	glReadnPixels ?[*]u8
 	glReleaseShaderCompiler ?[*]u8
 	glRenderbufferStorage ?[*]u8
 	glRenderbufferStorageMultisample ?[*]u8
@@ -1867,8 +1269,6 @@ struct Context {
 	glSecondaryColorP3uiv ?[*]u8
 	glShaderBinary ?[*]u8
 	glShaderSource ?[*]u8
-	glShaderStorageBlockBinding ?[*]u8
-	glSpecializeShader ?[*]u8
 	glStencilFunc ?[*]u8
 	glStencilFuncSeparate ?[*]u8
 	glStencilMask ?[*]u8
@@ -1876,7 +1276,6 @@ struct Context {
 	glStencilOp ?[*]u8
 	glStencilOpSeparate ?[*]u8
 	glTexBuffer ?[*]u8
-	glTexBufferRange ?[*]u8
 	glTexCoordP1ui ?[*]u8
 	glTexCoordP1uiv ?[*]u8
 	glTexCoordP2ui ?[*]u8
@@ -1896,34 +1295,9 @@ struct Context {
 	glTexParameterfv ?[*]u8
 	glTexParameteri ?[*]u8
 	glTexParameteriv ?[*]u8
-	glTexStorage1D ?[*]u8
-	glTexStorage2D ?[*]u8
-	glTexStorage2DMultisample ?[*]u8
-	glTexStorage3D ?[*]u8
-	glTexStorage3DMultisample ?[*]u8
 	glTexSubImage1D ?[*]u8
 	glTexSubImage2D ?[*]u8
 	glTexSubImage3D ?[*]u8
-	glTextureBarrier ?[*]u8
-	glTextureBuffer ?[*]u8
-	glTextureBufferRange ?[*]u8
-	glTextureParameterIiv ?[*]u8
-	glTextureParameterIuiv ?[*]u8
-	glTextureParameterf ?[*]u8
-	glTextureParameterfv ?[*]u8
-	glTextureParameteri ?[*]u8
-	glTextureParameteriv ?[*]u8
-	glTextureStorage1D ?[*]u8
-	glTextureStorage2D ?[*]u8
-	glTextureStorage2DMultisample ?[*]u8
-	glTextureStorage3D ?[*]u8
-	glTextureStorage3DMultisample ?[*]u8
-	glTextureSubImage1D ?[*]u8
-	glTextureSubImage2D ?[*]u8
-	glTextureSubImage3D ?[*]u8
-	glTextureView ?[*]u8
-	glTransformFeedbackBufferBase ?[*]u8
-	glTransformFeedbackBufferRange ?[*]u8
 	glTransformFeedbackVaryings ?[*]u8
 	glUniform1d ?[*]u8
 	glUniform1dv ?[*]u8
@@ -1978,19 +1352,10 @@ struct Context {
 	glUniformMatrix4x3fv ?[*]u8
 	glUniformSubroutinesuiv ?[*]u8
 	glUnmapBuffer ?[*]u8
-	glUnmapNamedBuffer ?[*]u8
 	glUseProgram ?[*]u8
 	glUseProgramStages ?[*]u8
 	glValidateProgram ?[*]u8
 	glValidateProgramPipeline ?[*]u8
-	glVertexArrayAttribBinding ?[*]u8
-	glVertexArrayAttribFormat ?[*]u8
-	glVertexArrayAttribIFormat ?[*]u8
-	glVertexArrayAttribLFormat ?[*]u8
-	glVertexArrayBindingDivisor ?[*]u8
-	glVertexArrayElementBuffer ?[*]u8
-	glVertexArrayVertexBuffer ?[*]u8
-	glVertexArrayVertexBuffers ?[*]u8
 	glVertexAttrib1d ?[*]u8
 	glVertexAttrib1dv ?[*]u8
 	glVertexAttrib1f ?[*]u8
@@ -2027,9 +1392,7 @@ struct Context {
 	glVertexAttrib4ubv ?[*]u8
 	glVertexAttrib4uiv ?[*]u8
 	glVertexAttrib4usv ?[*]u8
-	glVertexAttribBinding ?[*]u8
 	glVertexAttribDivisor ?[*]u8
-	glVertexAttribFormat ?[*]u8
 	glVertexAttribI1i ?[*]u8
 	glVertexAttribI1iv ?[*]u8
 	glVertexAttribI1ui ?[*]u8
@@ -2050,7 +1413,6 @@ struct Context {
 	glVertexAttribI4ui ?[*]u8
 	glVertexAttribI4uiv ?[*]u8
 	glVertexAttribI4usv ?[*]u8
-	glVertexAttribIFormat ?[*]u8
 	glVertexAttribIPointer ?[*]u8
 	glVertexAttribL1d ?[*]u8
 	glVertexAttribL1dv ?[*]u8
@@ -2060,7 +1422,6 @@ struct Context {
 	glVertexAttribL3dv ?[*]u8
 	glVertexAttribL4d ?[*]u8
 	glVertexAttribL4dv ?[*]u8
-	glVertexAttribLFormat ?[*]u8
 	glVertexAttribLPointer ?[*]u8
 	glVertexAttribP1ui ?[*]u8
 	glVertexAttribP1uiv ?[*]u8
@@ -2071,7 +1432,6 @@ struct Context {
 	glVertexAttribP4ui ?[*]u8
 	glVertexAttribP4uiv ?[*]u8
 	glVertexAttribPointer ?[*]u8
-	glVertexBindingDivisor ?[*]u8
 	glVertexP2ui ?[*]u8
 	glVertexP2uiv ?[*]u8
 	glVertexP3ui ?[*]u8
@@ -2175,22 +1535,6 @@ func (c *Context) BindBufferRange(target u32, index u32, buffer u32, offset i64,
     
 }
         
-func (c *Context) BindBuffersBase(target u32, first u32, count i32, buffers ?*u32) void {
-    if command := c.glBindBuffersBase {
-        fn := extern func(u32, u32, i32, ?*u32) void(command)
-        fn(target, first, count, buffers)
-    }
-    
-}
-        
-func (c *Context) BindBuffersRange(target u32, first u32, count i32, buffers ?*u32, offsets ?*i64, sizes ?*i64) void {
-    if command := c.glBindBuffersRange {
-        fn := extern func(u32, u32, i32, ?*u32, ?*i64, ?*i64) void(command)
-        fn(target, first, count, buffers, offsets, sizes)
-    }
-    
-}
-        
 func (c *Context) BindFragDataLocation(program u32, color u32, name ?[*]u8) void {
     if command := c.glBindFragDataLocation {
         fn := extern func(u32, u32, ?[*]u8) void(command)
@@ -2211,22 +1555,6 @@ func (c *Context) BindFramebuffer(target u32, framebuffer u32) void {
     if command := c.glBindFramebuffer {
         fn := extern func(u32, u32) void(command)
         fn(target, framebuffer)
-    }
-    
-}
-        
-func (c *Context) BindImageTexture(unit u32, texture u32, level i32, layered u8, layer i32, access u32, format u32) void {
-    if command := c.glBindImageTexture {
-        fn := extern func(u32, u32, i32, u8, i32, u32, u32) void(command)
-        fn(unit, texture, level, layered, layer, access, format)
-    }
-    
-}
-        
-func (c *Context) BindImageTextures(first u32, count i32, textures ?*u32) void {
-    if command := c.glBindImageTextures {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(first, count, textures)
     }
     
 }
@@ -2255,34 +1583,10 @@ func (c *Context) BindSampler(unit u32, sampler u32) void {
     
 }
         
-func (c *Context) BindSamplers(first u32, count i32, samplers ?*u32) void {
-    if command := c.glBindSamplers {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(first, count, samplers)
-    }
-    
-}
-        
 func (c *Context) BindTexture(target u32, texture u32) void {
     if command := c.glBindTexture {
         fn := extern func(u32, u32) void(command)
         fn(target, texture)
-    }
-    
-}
-        
-func (c *Context) BindTextureUnit(unit u32, texture u32) void {
-    if command := c.glBindTextureUnit {
-        fn := extern func(u32, u32) void(command)
-        fn(unit, texture)
-    }
-    
-}
-        
-func (c *Context) BindTextures(first u32, count i32, textures ?*u32) void {
-    if command := c.glBindTextures {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(first, count, textures)
     }
     
 }
@@ -2299,22 +1603,6 @@ func (c *Context) BindVertexArray(array u32) void {
     if command := c.glBindVertexArray {
         fn := extern func(u32) void(command)
         fn(array)
-    }
-    
-}
-        
-func (c *Context) BindVertexBuffer(bindingindex u32, buffer u32, offset i64, stride i32) void {
-    if command := c.glBindVertexBuffer {
-        fn := extern func(u32, u32, i64, i32) void(command)
-        fn(bindingindex, buffer, offset, stride)
-    }
-    
-}
-        
-func (c *Context) BindVertexBuffers(first u32, count i32, buffers ?*u32, offsets ?*i64, strides ?*i32) void {
-    if command := c.glBindVertexBuffers {
-        fn := extern func(u32, i32, ?*u32, ?*i64, ?*i32) void(command)
-        fn(first, count, buffers, offsets, strides)
     }
     
 }
@@ -2399,26 +1687,10 @@ func (c *Context) BlitFramebuffer(srcX0 i32, srcY0 i32, srcX1 i32, srcY1 i32, ds
     
 }
         
-func (c *Context) BlitNamedFramebuffer(readFramebuffer u32, drawFramebuffer u32, srcX0 i32, srcY0 i32, srcX1 i32, srcY1 i32, dstX0 i32, dstY0 i32, dstX1 i32, dstY1 i32, mask u32, filter u32) void {
-    if command := c.glBlitNamedFramebuffer {
-        fn := extern func(u32, u32, i32, i32, i32, i32, i32, i32, i32, i32, u32, u32) void(command)
-        fn(readFramebuffer, drawFramebuffer, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter)
-    }
-    
-}
-        
 func (c *Context) BufferData(target u32, size i64, data ?[*]u8, usage u32) void {
     if command := c.glBufferData {
         fn := extern func(u32, i64, ?[*]u8, u32) void(command)
         fn(target, size, data, usage)
-    }
-    
-}
-        
-func (c *Context) BufferStorage(target u32, size i64, data ?[*]u8, flags u32) void {
-    if command := c.glBufferStorage {
-        fn := extern func(u32, i64, ?[*]u8, u32) void(command)
-        fn(target, size, data, flags)
     }
     
 }
@@ -2439,14 +1711,6 @@ func (c *Context) CheckFramebufferStatus(target u32) u32 {
     return 0
 }
         
-func (c *Context) CheckNamedFramebufferStatus(framebuffer u32, target u32) u32 {
-    if command := c.glCheckNamedFramebufferStatus {
-        fn := extern func(u32, u32) u32(command)
-        return fn(framebuffer, target)
-    }
-    return 0
-}
-        
 func (c *Context) ClampColor(target u32, clamp u32) void {
     if command := c.glClampColor {
         fn := extern func(u32, u32) void(command)
@@ -2459,22 +1723,6 @@ func (c *Context) Clear(mask u32) void {
     if command := c.glClear {
         fn := extern func(u32) void(command)
         fn(mask)
-    }
-    
-}
-        
-func (c *Context) ClearBufferData(target u32, internalformat u32, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearBufferData {
-        fn := extern func(u32, u32, u32, u32, ?[*]u8) void(command)
-        fn(target, internalformat, format, t, data)
-    }
-    
-}
-        
-func (c *Context) ClearBufferSubData(target u32, internalformat u32, offset i64, size i64, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearBufferSubData {
-        fn := extern func(u32, u32, i64, i64, u32, u32, ?[*]u8) void(command)
-        fn(target, internalformat, offset, size, format, t, data)
     }
     
 }
@@ -2535,74 +1783,10 @@ func (c *Context) ClearDepthf(d f32) void {
     
 }
         
-func (c *Context) ClearNamedBufferData(buffer u32, internalformat u32, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearNamedBufferData {
-        fn := extern func(u32, u32, u32, u32, ?[*]u8) void(command)
-        fn(buffer, internalformat, format, t, data)
-    }
-    
-}
-        
-func (c *Context) ClearNamedBufferSubData(buffer u32, internalformat u32, offset i64, size i64, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearNamedBufferSubData {
-        fn := extern func(u32, u32, i64, i64, u32, u32, ?[*]u8) void(command)
-        fn(buffer, internalformat, offset, size, format, t, data)
-    }
-    
-}
-        
-func (c *Context) ClearNamedFramebufferfi(framebuffer u32, buffer u32, drawbuffer i32, depth f32, stencil i32) void {
-    if command := c.glClearNamedFramebufferfi {
-        fn := extern func(u32, u32, i32, f32, i32) void(command)
-        fn(framebuffer, buffer, drawbuffer, depth, stencil)
-    }
-    
-}
-        
-func (c *Context) ClearNamedFramebufferfv(framebuffer u32, buffer u32, drawbuffer i32, value ?*f32) void {
-    if command := c.glClearNamedFramebufferfv {
-        fn := extern func(u32, u32, i32, ?*f32) void(command)
-        fn(framebuffer, buffer, drawbuffer, value)
-    }
-    
-}
-        
-func (c *Context) ClearNamedFramebufferiv(framebuffer u32, buffer u32, drawbuffer i32, value ?*i32) void {
-    if command := c.glClearNamedFramebufferiv {
-        fn := extern func(u32, u32, i32, ?*i32) void(command)
-        fn(framebuffer, buffer, drawbuffer, value)
-    }
-    
-}
-        
-func (c *Context) ClearNamedFramebufferuiv(framebuffer u32, buffer u32, drawbuffer i32, value ?*u32) void {
-    if command := c.glClearNamedFramebufferuiv {
-        fn := extern func(u32, u32, i32, ?*u32) void(command)
-        fn(framebuffer, buffer, drawbuffer, value)
-    }
-    
-}
-        
 func (c *Context) ClearStencil(s i32) void {
     if command := c.glClearStencil {
         fn := extern func(i32) void(command)
         fn(s)
-    }
-    
-}
-        
-func (c *Context) ClearTexImage(texture u32, level i32, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearTexImage {
-        fn := extern func(u32, i32, u32, u32, ?[*]u8) void(command)
-        fn(texture, level, format, t, data)
-    }
-    
-}
-        
-func (c *Context) ClearTexSubImage(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32, format u32, t u32, data ?[*]u8) void {
-    if command := c.glClearTexSubImage {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, t, data)
     }
     
 }
@@ -2613,14 +1797,6 @@ func (c *Context) ClientWaitSync(sync ?[*]u8, flags u32, timeout u64) u32 {
         return fn(sync, flags, timeout)
     }
     return 0
-}
-        
-func (c *Context) ClipControl(origin u32, depth u32) void {
-    if command := c.glClipControl {
-        fn := extern func(u32, u32) void(command)
-        fn(origin, depth)
-    }
-    
 }
         
 func (c *Context) ColorMask(red u8, green u8, blue u8, alpha u8) void {
@@ -2727,50 +1903,10 @@ func (c *Context) CompressedTexSubImage3D(target u32, level i32, xoffset i32, yo
     
 }
         
-func (c *Context) CompressedTextureSubImage1D(texture u32, level i32, xoffset i32, width i32, format u32, imageSize i32, data ?[*]u8) void {
-    if command := c.glCompressedTextureSubImage1D {
-        fn := extern func(u32, i32, i32, i32, u32, i32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, width, format, imageSize, data)
-    }
-    
-}
-        
-func (c *Context) CompressedTextureSubImage2D(texture u32, level i32, xoffset i32, yoffset i32, width i32, height i32, format u32, imageSize i32, data ?[*]u8) void {
-    if command := c.glCompressedTextureSubImage2D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, u32, i32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, width, height, format, imageSize, data)
-    }
-    
-}
-        
-func (c *Context) CompressedTextureSubImage3D(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32, format u32, imageSize i32, data ?[*]u8) void {
-    if command := c.glCompressedTextureSubImage3D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, u32, i32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data)
-    }
-    
-}
-        
 func (c *Context) CopyBufferSubData(readTarget u32, writeTarget u32, readOffset i64, writeOffset i64, size i64) void {
     if command := c.glCopyBufferSubData {
         fn := extern func(u32, u32, i64, i64, i64) void(command)
         fn(readTarget, writeTarget, readOffset, writeOffset, size)
-    }
-    
-}
-        
-func (c *Context) CopyImageSubData(srcName u32, srcTarget u32, srcLevel i32, srcX i32, srcY i32, srcZ i32, dstName u32, dstTarget u32, dstLevel i32, dstX i32, dstY i32, dstZ i32, srcWidth i32, srcHeight i32, srcDepth i32) void {
-    if command := c.glCopyImageSubData {
-        fn := extern func(u32, u32, i32, i32, i32, i32, u32, u32, i32, i32, i32, i32, i32, i32, i32) void(command)
-        fn(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth)
-    }
-    
-}
-        
-func (c *Context) CopyNamedBufferSubData(readBuffer u32, writeBuffer u32, readOffset i64, writeOffset i64, size i64) void {
-    if command := c.glCopyNamedBufferSubData {
-        fn := extern func(u32, u32, i64, i64, i64) void(command)
-        fn(readBuffer, writeBuffer, readOffset, writeOffset, size)
     }
     
 }
@@ -2815,84 +1951,12 @@ func (c *Context) CopyTexSubImage3D(target u32, level i32, xoffset i32, yoffset 
     
 }
         
-func (c *Context) CopyTextureSubImage1D(texture u32, level i32, xoffset i32, x i32, y i32, width i32) void {
-    if command := c.glCopyTextureSubImage1D {
-        fn := extern func(u32, i32, i32, i32, i32, i32) void(command)
-        fn(texture, level, xoffset, x, y, width)
-    }
-    
-}
-        
-func (c *Context) CopyTextureSubImage2D(texture u32, level i32, xoffset i32, yoffset i32, x i32, y i32, width i32, height i32) void {
-    if command := c.glCopyTextureSubImage2D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32) void(command)
-        fn(texture, level, xoffset, yoffset, x, y, width, height)
-    }
-    
-}
-        
-func (c *Context) CopyTextureSubImage3D(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, x i32, y i32, width i32, height i32) void {
-    if command := c.glCopyTextureSubImage3D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, i32) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, x, y, width, height)
-    }
-    
-}
-        
-func (c *Context) CreateBuffers(n i32, buffers ?*u32) void {
-    if command := c.glCreateBuffers {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, buffers)
-    }
-    
-}
-        
-func (c *Context) CreateFramebuffers(n i32, framebuffers ?*u32) void {
-    if command := c.glCreateFramebuffers {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, framebuffers)
-    }
-    
-}
-        
 func (c *Context) CreateProgram() u32 {
     if command := c.glCreateProgram {
         fn := extern func() u32(command)
         return fn()
     }
     return 0
-}
-        
-func (c *Context) CreateProgramPipelines(n i32, pipelines ?*u32) void {
-    if command := c.glCreateProgramPipelines {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, pipelines)
-    }
-    
-}
-        
-func (c *Context) CreateQueries(target u32, n i32, ids ?*u32) void {
-    if command := c.glCreateQueries {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(target, n, ids)
-    }
-    
-}
-        
-func (c *Context) CreateRenderbuffers(n i32, renderbuffers ?*u32) void {
-    if command := c.glCreateRenderbuffers {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, renderbuffers)
-    }
-    
-}
-        
-func (c *Context) CreateSamplers(n i32, samplers ?*u32) void {
-    if command := c.glCreateSamplers {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, samplers)
-    }
-    
 }
         
 func (c *Context) CreateShader(t u32) u32 {
@@ -2911,58 +1975,10 @@ func (c *Context) CreateShaderProgramv(t u32, count i32, strings ?[*][*]u8) u32 
     return 0
 }
         
-func (c *Context) CreateTextures(target u32, n i32, textures ?*u32) void {
-    if command := c.glCreateTextures {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(target, n, textures)
-    }
-    
-}
-        
-func (c *Context) CreateTransformFeedbacks(n i32, ids ?*u32) void {
-    if command := c.glCreateTransformFeedbacks {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, ids)
-    }
-    
-}
-        
-func (c *Context) CreateVertexArrays(n i32, arrays ?*u32) void {
-    if command := c.glCreateVertexArrays {
-        fn := extern func(i32, ?*u32) void(command)
-        fn(n, arrays)
-    }
-    
-}
-        
 func (c *Context) CullFace(mode u32) void {
     if command := c.glCullFace {
         fn := extern func(u32) void(command)
         fn(mode)
-    }
-    
-}
-        
-func (c *Context) DebugMessageCallback(callback ?[*]u8, userParam ?[*]u8) void {
-    if command := c.glDebugMessageCallback {
-        fn := extern func(?[*]u8, ?[*]u8) void(command)
-        fn(callback, userParam)
-    }
-    
-}
-        
-func (c *Context) DebugMessageControl(source u32, t u32, severity u32, count i32, ids ?*u32, enabled u8) void {
-    if command := c.glDebugMessageControl {
-        fn := extern func(u32, u32, u32, i32, ?*u32, u8) void(command)
-        fn(source, t, severity, count, ids, enabled)
-    }
-    
-}
-        
-func (c *Context) DebugMessageInsert(source u32, t u32, id u32, severity u32, length i32, buf ?[*]u8) void {
-    if command := c.glDebugMessageInsert {
-        fn := extern func(u32, u32, u32, u32, i32, ?[*]u8) void(command)
-        fn(source, t, id, severity, length, buf)
     }
     
 }
@@ -3127,14 +2143,6 @@ func (c *Context) Disable(cap u32) void {
     
 }
         
-func (c *Context) DisableVertexArrayAttrib(vaobj u32, index u32) void {
-    if command := c.glDisableVertexArrayAttrib {
-        fn := extern func(u32, u32) void(command)
-        fn(vaobj, index)
-    }
-    
-}
-        
 func (c *Context) DisableVertexAttribArray(index u32) void {
     if command := c.glDisableVertexAttribArray {
         fn := extern func(u32) void(command)
@@ -3147,22 +2155,6 @@ func (c *Context) Disablei(target u32, index u32) void {
     if command := c.glDisablei {
         fn := extern func(u32, u32) void(command)
         fn(target, index)
-    }
-    
-}
-        
-func (c *Context) DispatchCompute(num_groups_x u32, num_groups_y u32, num_groups_z u32) void {
-    if command := c.glDispatchCompute {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(num_groups_x, num_groups_y, num_groups_z)
-    }
-    
-}
-        
-func (c *Context) DispatchComputeIndirect(indirect i64) void {
-    if command := c.glDispatchComputeIndirect {
-        fn := extern func(i64) void(command)
-        fn(indirect)
     }
     
 }
@@ -3187,14 +2179,6 @@ func (c *Context) DrawArraysInstanced(mode u32, first i32, count i32, instanceco
     if command := c.glDrawArraysInstanced {
         fn := extern func(u32, i32, i32, i32) void(command)
         fn(mode, first, count, instancecount)
-    }
-    
-}
-        
-func (c *Context) DrawArraysInstancedBaseInstance(mode u32, first i32, count i32, instancecount i32, baseinstance u32) void {
-    if command := c.glDrawArraysInstancedBaseInstance {
-        fn := extern func(u32, i32, i32, i32, u32) void(command)
-        fn(mode, first, count, instancecount, baseinstance)
     }
     
 }
@@ -3247,26 +2231,10 @@ func (c *Context) DrawElementsInstanced(mode u32, count i32, t u32, indices ?[*]
     
 }
         
-func (c *Context) DrawElementsInstancedBaseInstance(mode u32, count i32, t u32, indices ?[*]u8, instancecount i32, baseinstance u32) void {
-    if command := c.glDrawElementsInstancedBaseInstance {
-        fn := extern func(u32, i32, u32, ?[*]u8, i32, u32) void(command)
-        fn(mode, count, t, indices, instancecount, baseinstance)
-    }
-    
-}
-        
 func (c *Context) DrawElementsInstancedBaseVertex(mode u32, count i32, t u32, indices ?[*]u8, instancecount i32, basevertex i32) void {
     if command := c.glDrawElementsInstancedBaseVertex {
         fn := extern func(u32, i32, u32, ?[*]u8, i32, i32) void(command)
         fn(mode, count, t, indices, instancecount, basevertex)
-    }
-    
-}
-        
-func (c *Context) DrawElementsInstancedBaseVertexBaseInstance(mode u32, count i32, t u32, indices ?[*]u8, instancecount i32, basevertex i32, baseinstance u32) void {
-    if command := c.glDrawElementsInstancedBaseVertexBaseInstance {
-        fn := extern func(u32, i32, u32, ?[*]u8, i32, i32, u32) void(command)
-        fn(mode, count, t, indices, instancecount, basevertex, baseinstance)
     }
     
 }
@@ -3295,14 +2263,6 @@ func (c *Context) DrawTransformFeedback(mode u32, id u32) void {
     
 }
         
-func (c *Context) DrawTransformFeedbackInstanced(mode u32, id u32, instancecount i32) void {
-    if command := c.glDrawTransformFeedbackInstanced {
-        fn := extern func(u32, u32, i32) void(command)
-        fn(mode, id, instancecount)
-    }
-    
-}
-        
 func (c *Context) DrawTransformFeedbackStream(mode u32, id u32, stream u32) void {
     if command := c.glDrawTransformFeedbackStream {
         fn := extern func(u32, u32, u32) void(command)
@@ -3311,26 +2271,10 @@ func (c *Context) DrawTransformFeedbackStream(mode u32, id u32, stream u32) void
     
 }
         
-func (c *Context) DrawTransformFeedbackStreamInstanced(mode u32, id u32, stream u32, instancecount i32) void {
-    if command := c.glDrawTransformFeedbackStreamInstanced {
-        fn := extern func(u32, u32, u32, i32) void(command)
-        fn(mode, id, stream, instancecount)
-    }
-    
-}
-        
 func (c *Context) Enable(cap u32) void {
     if command := c.glEnable {
         fn := extern func(u32) void(command)
         fn(cap)
-    }
-    
-}
-        
-func (c *Context) EnableVertexArrayAttrib(vaobj u32, index u32) void {
-    if command := c.glEnableVertexArrayAttrib {
-        fn := extern func(u32, u32) void(command)
-        fn(vaobj, index)
     }
     
 }
@@ -3411,22 +2355,6 @@ func (c *Context) FlushMappedBufferRange(target u32, offset i64, length i64) voi
     if command := c.glFlushMappedBufferRange {
         fn := extern func(u32, i64, i64) void(command)
         fn(target, offset, length)
-    }
-    
-}
-        
-func (c *Context) FlushMappedNamedBufferRange(buffer u32, offset i64, length i64) void {
-    if command := c.glFlushMappedNamedBufferRange {
-        fn := extern func(u32, i64, i64) void(command)
-        fn(buffer, offset, length)
-    }
-    
-}
-        
-func (c *Context) FramebufferParameteri(target u32, pname u32, param i32) void {
-    if command := c.glFramebufferParameteri {
-        fn := extern func(u32, u32, i32) void(command)
-        fn(target, pname, param)
     }
     
 }
@@ -3563,22 +2491,6 @@ func (c *Context) GenerateMipmap(target u32) void {
     if command := c.glGenerateMipmap {
         fn := extern func(u32) void(command)
         fn(target)
-    }
-    
-}
-        
-func (c *Context) GenerateTextureMipmap(texture u32) void {
-    if command := c.glGenerateTextureMipmap {
-        fn := extern func(u32) void(command)
-        fn(texture)
-    }
-    
-}
-        
-func (c *Context) GetActiveAtomicCounterBufferiv(program u32, bufferIndex u32, pname u32, params ?*i32) void {
-    if command := c.glGetActiveAtomicCounterBufferiv {
-        fn := extern func(u32, u32, u32, ?*i32) void(command)
-        fn(program, bufferIndex, pname, params)
     }
     
 }
@@ -3727,30 +2639,6 @@ func (c *Context) GetCompressedTexImage(target u32, level i32, img ?[*]u8) void 
     
 }
         
-func (c *Context) GetCompressedTextureImage(texture u32, level i32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetCompressedTextureImage {
-        fn := extern func(u32, i32, i32, ?[*]u8) void(command)
-        fn(texture, level, bufSize, pixels)
-    }
-    
-}
-        
-func (c *Context) GetCompressedTextureSubImage(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetCompressedTextureSubImage {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, i32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels)
-    }
-    
-}
-        
-func (c *Context) GetDebugMessageLog(count u32, bufSize i32, sources ?*u32, types ?*u32, ids ?*u32, severities ?*u32, lengths ?*i32, messageLog ?*u8) u32 {
-    if command := c.glGetDebugMessageLog {
-        fn := extern func(u32, i32, ?*u32, ?*u32, ?*u32, ?*u32, ?*i32, ?*u8) u32(command)
-        return fn(count, bufSize, sources, types, ids, severities, lengths, messageLog)
-    }
-    return 0
-}
-        
 func (c *Context) GetDoublei_v(target u32, index u32, data ?*f64) void {
     if command := c.glGetDoublei_v {
         fn := extern func(u32, u32, ?*f64) void(command)
@@ -3815,22 +2703,6 @@ func (c *Context) GetFramebufferAttachmentParameteriv(target u32, attachment u32
     
 }
         
-func (c *Context) GetFramebufferParameteriv(target u32, pname u32, params ?*i32) void {
-    if command := c.glGetFramebufferParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(target, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetGraphicsResetStatus() u32 {
-    if command := c.glGetGraphicsResetStatus {
-        fn := extern func() u32(command)
-        return fn()
-    }
-    return 0
-}
-        
 func (c *Context) GetInteger64i_v(target u32, index u32, data ?*i64) void {
     if command := c.glGetInteger64i_v {
         fn := extern func(u32, u32, ?*i64) void(command)
@@ -3863,106 +2735,10 @@ func (c *Context) GetIntegerv(pname u32, data ?*i32) void {
     
 }
         
-func (c *Context) GetInternalformati64v(target u32, internalformat u32, pname u32, count i32, params ?*i64) void {
-    if command := c.glGetInternalformati64v {
-        fn := extern func(u32, u32, u32, i32, ?*i64) void(command)
-        fn(target, internalformat, pname, count, params)
-    }
-    
-}
-        
-func (c *Context) GetInternalformativ(target u32, internalformat u32, pname u32, count i32, params ?*i32) void {
-    if command := c.glGetInternalformativ {
-        fn := extern func(u32, u32, u32, i32, ?*i32) void(command)
-        fn(target, internalformat, pname, count, params)
-    }
-    
-}
-        
 func (c *Context) GetMultisamplefv(pname u32, index u32, val ?*f32) void {
     if command := c.glGetMultisamplefv {
         fn := extern func(u32, u32, ?*f32) void(command)
         fn(pname, index, val)
-    }
-    
-}
-        
-func (c *Context) GetNamedBufferParameteri64v(buffer u32, pname u32, params ?*i64) void {
-    if command := c.glGetNamedBufferParameteri64v {
-        fn := extern func(u32, u32, ?*i64) void(command)
-        fn(buffer, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetNamedBufferParameteriv(buffer u32, pname u32, params ?*i32) void {
-    if command := c.glGetNamedBufferParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(buffer, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetNamedBufferPointerv(buffer u32, pname u32, params ?[*][*]u8) void {
-    if command := c.glGetNamedBufferPointerv {
-        fn := extern func(u32, u32, ?[*][*]u8) void(command)
-        fn(buffer, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetNamedBufferSubData(buffer u32, offset i64, size i64, data ?[*]u8) void {
-    if command := c.glGetNamedBufferSubData {
-        fn := extern func(u32, i64, i64, ?[*]u8) void(command)
-        fn(buffer, offset, size, data)
-    }
-    
-}
-        
-func (c *Context) GetNamedFramebufferAttachmentParameteriv(framebuffer u32, attachment u32, pname u32, params ?*i32) void {
-    if command := c.glGetNamedFramebufferAttachmentParameteriv {
-        fn := extern func(u32, u32, u32, ?*i32) void(command)
-        fn(framebuffer, attachment, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetNamedFramebufferParameteriv(framebuffer u32, pname u32, param ?*i32) void {
-    if command := c.glGetNamedFramebufferParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(framebuffer, pname, param)
-    }
-    
-}
-        
-func (c *Context) GetNamedRenderbufferParameteriv(renderbuffer u32, pname u32, params ?*i32) void {
-    if command := c.glGetNamedRenderbufferParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(renderbuffer, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetObjectLabel(identifier u32, name u32, bufSize i32, length ?*i32, label ?*u8) void {
-    if command := c.glGetObjectLabel {
-        fn := extern func(u32, u32, i32, ?*i32, ?*u8) void(command)
-        fn(identifier, name, bufSize, length, label)
-    }
-    
-}
-        
-func (c *Context) GetObjectPtrLabel(ptr ?[*]u8, bufSize i32, length ?*i32, label ?*u8) void {
-    if command := c.glGetObjectPtrLabel {
-        fn := extern func(?[*]u8, i32, ?*i32, ?*u8) void(command)
-        fn(ptr, bufSize, length, label)
-    }
-    
-}
-        
-func (c *Context) GetPointerv(pname u32, params ?[*][*]u8) void {
-    if command := c.glGetPointerv {
-        fn := extern func(u32, ?[*][*]u8) void(command)
-        fn(pname, params)
     }
     
 }
@@ -3983,14 +2759,6 @@ func (c *Context) GetProgramInfoLog(program u32, bufSize i32, length ?*i32, info
     
 }
         
-func (c *Context) GetProgramInterfaceiv(program u32, programInterface u32, pname u32, params ?*i32) void {
-    if command := c.glGetProgramInterfaceiv {
-        fn := extern func(u32, u32, u32, ?*i32) void(command)
-        fn(program, programInterface, pname, params)
-    }
-    
-}
-        
 func (c *Context) GetProgramPipelineInfoLog(pipeline u32, bufSize i32, length ?*i32, infoLog ?*u8) void {
     if command := c.glGetProgramPipelineInfoLog {
         fn := extern func(u32, i32, ?*i32, ?*u8) void(command)
@@ -4007,46 +2775,6 @@ func (c *Context) GetProgramPipelineiv(pipeline u32, pname u32, params ?*i32) vo
     
 }
         
-func (c *Context) GetProgramResourceIndex(program u32, programInterface u32, name ?[*]u8) u32 {
-    if command := c.glGetProgramResourceIndex {
-        fn := extern func(u32, u32, ?[*]u8) u32(command)
-        return fn(program, programInterface, name)
-    }
-    return 0
-}
-        
-func (c *Context) GetProgramResourceLocation(program u32, programInterface u32, name ?[*]u8) i32 {
-    if command := c.glGetProgramResourceLocation {
-        fn := extern func(u32, u32, ?[*]u8) i32(command)
-        return fn(program, programInterface, name)
-    }
-    return 0
-}
-        
-func (c *Context) GetProgramResourceLocationIndex(program u32, programInterface u32, name ?[*]u8) i32 {
-    if command := c.glGetProgramResourceLocationIndex {
-        fn := extern func(u32, u32, ?[*]u8) i32(command)
-        return fn(program, programInterface, name)
-    }
-    return 0
-}
-        
-func (c *Context) GetProgramResourceName(program u32, programInterface u32, index u32, bufSize i32, length ?*i32, name ?*u8) void {
-    if command := c.glGetProgramResourceName {
-        fn := extern func(u32, u32, u32, i32, ?*i32, ?*u8) void(command)
-        fn(program, programInterface, index, bufSize, length, name)
-    }
-    
-}
-        
-func (c *Context) GetProgramResourceiv(program u32, programInterface u32, index u32, propCount i32, props ?*u32, count i32, length ?*i32, params ?*i32) void {
-    if command := c.glGetProgramResourceiv {
-        fn := extern func(u32, u32, u32, i32, ?*u32, i32, ?*i32, ?*i32) void(command)
-        fn(program, programInterface, index, propCount, props, count, length, params)
-    }
-    
-}
-        
 func (c *Context) GetProgramStageiv(program u32, shadertype u32, pname u32, values ?*i32) void {
     if command := c.glGetProgramStageiv {
         fn := extern func(u32, u32, u32, ?*i32) void(command)
@@ -4059,38 +2787,6 @@ func (c *Context) GetProgramiv(program u32, pname u32, params ?*i32) void {
     if command := c.glGetProgramiv {
         fn := extern func(u32, u32, ?*i32) void(command)
         fn(program, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetQueryBufferObjecti64v(id u32, buffer u32, pname u32, offset i64) void {
-    if command := c.glGetQueryBufferObjecti64v {
-        fn := extern func(u32, u32, u32, i64) void(command)
-        fn(id, buffer, pname, offset)
-    }
-    
-}
-        
-func (c *Context) GetQueryBufferObjectiv(id u32, buffer u32, pname u32, offset i64) void {
-    if command := c.glGetQueryBufferObjectiv {
-        fn := extern func(u32, u32, u32, i64) void(command)
-        fn(id, buffer, pname, offset)
-    }
-    
-}
-        
-func (c *Context) GetQueryBufferObjectui64v(id u32, buffer u32, pname u32, offset i64) void {
-    if command := c.glGetQueryBufferObjectui64v {
-        fn := extern func(u32, u32, u32, i64) void(command)
-        fn(id, buffer, pname, offset)
-    }
-    
-}
-        
-func (c *Context) GetQueryBufferObjectuiv(id u32, buffer u32, pname u32, offset i64) void {
-    if command := c.glGetQueryBufferObjectuiv {
-        fn := extern func(u32, u32, u32, i64) void(command)
-        fn(id, buffer, pname, offset)
     }
     
 }
@@ -4311,98 +3007,10 @@ func (c *Context) GetTexParameteriv(target u32, pname u32, params ?*i32) void {
     
 }
         
-func (c *Context) GetTextureImage(texture u32, level i32, format u32, t u32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetTextureImage {
-        fn := extern func(u32, i32, u32, u32, i32, ?[*]u8) void(command)
-        fn(texture, level, format, t, bufSize, pixels)
-    }
-    
-}
-        
-func (c *Context) GetTextureLevelParameterfv(texture u32, level i32, pname u32, params ?*f32) void {
-    if command := c.glGetTextureLevelParameterfv {
-        fn := extern func(u32, i32, u32, ?*f32) void(command)
-        fn(texture, level, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureLevelParameteriv(texture u32, level i32, pname u32, params ?*i32) void {
-    if command := c.glGetTextureLevelParameteriv {
-        fn := extern func(u32, i32, u32, ?*i32) void(command)
-        fn(texture, level, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureParameterIiv(texture u32, pname u32, params ?*i32) void {
-    if command := c.glGetTextureParameterIiv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureParameterIuiv(texture u32, pname u32, params ?*u32) void {
-    if command := c.glGetTextureParameterIuiv {
-        fn := extern func(u32, u32, ?*u32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureParameterfv(texture u32, pname u32, params ?*f32) void {
-    if command := c.glGetTextureParameterfv {
-        fn := extern func(u32, u32, ?*f32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureParameteriv(texture u32, pname u32, params ?*i32) void {
-    if command := c.glGetTextureParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) GetTextureSubImage(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32, format u32, t u32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetTextureSubImage {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, u32, u32, i32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, t, bufSize, pixels)
-    }
-    
-}
-        
 func (c *Context) GetTransformFeedbackVarying(program u32, index u32, bufSize i32, length ?*i32, size ?*i32, t ?*u32, name ?*u8) void {
     if command := c.glGetTransformFeedbackVarying {
         fn := extern func(u32, u32, i32, ?*i32, ?*i32, ?*u32, ?*u8) void(command)
         fn(program, index, bufSize, length, size, t, name)
-    }
-    
-}
-        
-func (c *Context) GetTransformFeedbacki64_v(xfb u32, pname u32, index u32, param ?*i64) void {
-    if command := c.glGetTransformFeedbacki64_v {
-        fn := extern func(u32, u32, u32, ?*i64) void(command)
-        fn(xfb, pname, index, param)
-    }
-    
-}
-        
-func (c *Context) GetTransformFeedbacki_v(xfb u32, pname u32, index u32, param ?*i32) void {
-    if command := c.glGetTransformFeedbacki_v {
-        fn := extern func(u32, u32, u32, ?*i32) void(command)
-        fn(xfb, pname, index, param)
-    }
-    
-}
-        
-func (c *Context) GetTransformFeedbackiv(xfb u32, pname u32, param ?*i32) void {
-    if command := c.glGetTransformFeedbackiv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(xfb, pname, param)
     }
     
 }
@@ -4471,30 +3079,6 @@ func (c *Context) GetUniformuiv(program u32, location i32, params ?*u32) void {
     
 }
         
-func (c *Context) GetVertexArrayIndexed64iv(vaobj u32, index u32, pname u32, param ?*i64) void {
-    if command := c.glGetVertexArrayIndexed64iv {
-        fn := extern func(u32, u32, u32, ?*i64) void(command)
-        fn(vaobj, index, pname, param)
-    }
-    
-}
-        
-func (c *Context) GetVertexArrayIndexediv(vaobj u32, index u32, pname u32, param ?*i32) void {
-    if command := c.glGetVertexArrayIndexediv {
-        fn := extern func(u32, u32, u32, ?*i32) void(command)
-        fn(vaobj, index, pname, param)
-    }
-    
-}
-        
-func (c *Context) GetVertexArrayiv(vaobj u32, pname u32, param ?*i32) void {
-    if command := c.glGetVertexArrayiv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(vaobj, pname, param)
-    }
-    
-}
-        
 func (c *Context) GetVertexAttribIiv(index u32, pname u32, params ?*i32) void {
     if command := c.glGetVertexAttribIiv {
         fn := extern func(u32, u32, ?*i32) void(command)
@@ -4551,218 +3135,10 @@ func (c *Context) GetVertexAttribiv(index u32, pname u32, params ?*i32) void {
     
 }
         
-func (c *Context) GetnColorTable(target u32, format u32, t u32, bufSize i32, table ?[*]u8) void {
-    if command := c.glGetnColorTable {
-        fn := extern func(u32, u32, u32, i32, ?[*]u8) void(command)
-        fn(target, format, t, bufSize, table)
-    }
-    
-}
-        
-func (c *Context) GetnCompressedTexImage(target u32, lod i32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetnCompressedTexImage {
-        fn := extern func(u32, i32, i32, ?[*]u8) void(command)
-        fn(target, lod, bufSize, pixels)
-    }
-    
-}
-        
-func (c *Context) GetnConvolutionFilter(target u32, format u32, t u32, bufSize i32, image ?[*]u8) void {
-    if command := c.glGetnConvolutionFilter {
-        fn := extern func(u32, u32, u32, i32, ?[*]u8) void(command)
-        fn(target, format, t, bufSize, image)
-    }
-    
-}
-        
-func (c *Context) GetnHistogram(target u32, reset u8, format u32, t u32, bufSize i32, values ?[*]u8) void {
-    if command := c.glGetnHistogram {
-        fn := extern func(u32, u8, u32, u32, i32, ?[*]u8) void(command)
-        fn(target, reset, format, t, bufSize, values)
-    }
-    
-}
-        
-func (c *Context) GetnMapdv(target u32, query u32, bufSize i32, v ?*f64) void {
-    if command := c.glGetnMapdv {
-        fn := extern func(u32, u32, i32, ?*f64) void(command)
-        fn(target, query, bufSize, v)
-    }
-    
-}
-        
-func (c *Context) GetnMapfv(target u32, query u32, bufSize i32, v ?*f32) void {
-    if command := c.glGetnMapfv {
-        fn := extern func(u32, u32, i32, ?*f32) void(command)
-        fn(target, query, bufSize, v)
-    }
-    
-}
-        
-func (c *Context) GetnMapiv(target u32, query u32, bufSize i32, v ?*i32) void {
-    if command := c.glGetnMapiv {
-        fn := extern func(u32, u32, i32, ?*i32) void(command)
-        fn(target, query, bufSize, v)
-    }
-    
-}
-        
-func (c *Context) GetnMinmax(target u32, reset u8, format u32, t u32, bufSize i32, values ?[*]u8) void {
-    if command := c.glGetnMinmax {
-        fn := extern func(u32, u8, u32, u32, i32, ?[*]u8) void(command)
-        fn(target, reset, format, t, bufSize, values)
-    }
-    
-}
-        
-func (c *Context) GetnPixelMapfv(map u32, bufSize i32, values ?*f32) void {
-    if command := c.glGetnPixelMapfv {
-        fn := extern func(u32, i32, ?*f32) void(command)
-        fn(map, bufSize, values)
-    }
-    
-}
-        
-func (c *Context) GetnPixelMapuiv(map u32, bufSize i32, values ?*u32) void {
-    if command := c.glGetnPixelMapuiv {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(map, bufSize, values)
-    }
-    
-}
-        
-func (c *Context) GetnPixelMapusv(map u32, bufSize i32, values ?*u16) void {
-    if command := c.glGetnPixelMapusv {
-        fn := extern func(u32, i32, ?*u16) void(command)
-        fn(map, bufSize, values)
-    }
-    
-}
-        
-func (c *Context) GetnPolygonStipple(bufSize i32, pattern ?*u8) void {
-    if command := c.glGetnPolygonStipple {
-        fn := extern func(i32, ?*u8) void(command)
-        fn(bufSize, pattern)
-    }
-    
-}
-        
-func (c *Context) GetnSeparableFilter(target u32, format u32, t u32, rowBufSize i32, row ?[*]u8, columnBufSize i32, column ?[*]u8, span ?[*]u8) void {
-    if command := c.glGetnSeparableFilter {
-        fn := extern func(u32, u32, u32, i32, ?[*]u8, i32, ?[*]u8, ?[*]u8) void(command)
-        fn(target, format, t, rowBufSize, row, columnBufSize, column, span)
-    }
-    
-}
-        
-func (c *Context) GetnTexImage(target u32, level i32, format u32, t u32, bufSize i32, pixels ?[*]u8) void {
-    if command := c.glGetnTexImage {
-        fn := extern func(u32, i32, u32, u32, i32, ?[*]u8) void(command)
-        fn(target, level, format, t, bufSize, pixels)
-    }
-    
-}
-        
-func (c *Context) GetnUniformdv(program u32, location i32, bufSize i32, params ?*f64) void {
-    if command := c.glGetnUniformdv {
-        fn := extern func(u32, i32, i32, ?*f64) void(command)
-        fn(program, location, bufSize, params)
-    }
-    
-}
-        
-func (c *Context) GetnUniformfv(program u32, location i32, bufSize i32, params ?*f32) void {
-    if command := c.glGetnUniformfv {
-        fn := extern func(u32, i32, i32, ?*f32) void(command)
-        fn(program, location, bufSize, params)
-    }
-    
-}
-        
-func (c *Context) GetnUniformiv(program u32, location i32, bufSize i32, params ?*i32) void {
-    if command := c.glGetnUniformiv {
-        fn := extern func(u32, i32, i32, ?*i32) void(command)
-        fn(program, location, bufSize, params)
-    }
-    
-}
-        
-func (c *Context) GetnUniformuiv(program u32, location i32, bufSize i32, params ?*u32) void {
-    if command := c.glGetnUniformuiv {
-        fn := extern func(u32, i32, i32, ?*u32) void(command)
-        fn(program, location, bufSize, params)
-    }
-    
-}
-        
 func (c *Context) Hint(target u32, mode u32) void {
     if command := c.glHint {
         fn := extern func(u32, u32) void(command)
         fn(target, mode)
-    }
-    
-}
-        
-func (c *Context) InvalidateBufferData(buffer u32) void {
-    if command := c.glInvalidateBufferData {
-        fn := extern func(u32) void(command)
-        fn(buffer)
-    }
-    
-}
-        
-func (c *Context) InvalidateBufferSubData(buffer u32, offset i64, length i64) void {
-    if command := c.glInvalidateBufferSubData {
-        fn := extern func(u32, i64, i64) void(command)
-        fn(buffer, offset, length)
-    }
-    
-}
-        
-func (c *Context) InvalidateFramebuffer(target u32, numAttachments i32, attachments ?*u32) void {
-    if command := c.glInvalidateFramebuffer {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(target, numAttachments, attachments)
-    }
-    
-}
-        
-func (c *Context) InvalidateNamedFramebufferData(framebuffer u32, numAttachments i32, attachments ?*u32) void {
-    if command := c.glInvalidateNamedFramebufferData {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(framebuffer, numAttachments, attachments)
-    }
-    
-}
-        
-func (c *Context) InvalidateNamedFramebufferSubData(framebuffer u32, numAttachments i32, attachments ?*u32, x i32, y i32, width i32, height i32) void {
-    if command := c.glInvalidateNamedFramebufferSubData {
-        fn := extern func(u32, i32, ?*u32, i32, i32, i32, i32) void(command)
-        fn(framebuffer, numAttachments, attachments, x, y, width, height)
-    }
-    
-}
-        
-func (c *Context) InvalidateSubFramebuffer(target u32, numAttachments i32, attachments ?*u32, x i32, y i32, width i32, height i32) void {
-    if command := c.glInvalidateSubFramebuffer {
-        fn := extern func(u32, i32, ?*u32, i32, i32, i32, i32) void(command)
-        fn(target, numAttachments, attachments, x, y, width, height)
-    }
-    
-}
-        
-func (c *Context) InvalidateTexImage(texture u32, level i32) void {
-    if command := c.glInvalidateTexImage {
-        fn := extern func(u32, i32) void(command)
-        fn(texture, level)
-    }
-    
-}
-        
-func (c *Context) InvalidateTexSubImage(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32) void {
-    if command := c.glInvalidateTexSubImage {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth)
     }
     
 }
@@ -4919,38 +3295,6 @@ func (c *Context) MapBufferRange(target u32, offset i64, length i64, access u32)
     return nil
 }
         
-func (c *Context) MapNamedBuffer(buffer u32, access u32) ?[*]u8 {
-    if command := c.glMapNamedBuffer {
-        fn := extern func(u32, u32) ?[*]u8(command)
-        return fn(buffer, access)
-    }
-    return nil
-}
-        
-func (c *Context) MapNamedBufferRange(buffer u32, offset i64, length i64, access u32) ?[*]u8 {
-    if command := c.glMapNamedBufferRange {
-        fn := extern func(u32, i64, i64, u32) ?[*]u8(command)
-        return fn(buffer, offset, length, access)
-    }
-    return nil
-}
-        
-func (c *Context) MemoryBarrier(barriers u32) void {
-    if command := c.glMemoryBarrier {
-        fn := extern func(u32) void(command)
-        fn(barriers)
-    }
-    
-}
-        
-func (c *Context) MemoryBarrierByRegion(barriers u32) void {
-    if command := c.glMemoryBarrierByRegion {
-        fn := extern func(u32) void(command)
-        fn(barriers)
-    }
-    
-}
-        
 func (c *Context) MinSampleShading(value f32) void {
     if command := c.glMinSampleShading {
         fn := extern func(f32) void(command)
@@ -4967,22 +3311,6 @@ func (c *Context) MultiDrawArrays(mode u32, first ?*i32, count ?*i32, drawcount 
     
 }
         
-func (c *Context) MultiDrawArraysIndirect(mode u32, indirect ?[*]u8, drawcount i32, stride i32) void {
-    if command := c.glMultiDrawArraysIndirect {
-        fn := extern func(u32, ?[*]u8, i32, i32) void(command)
-        fn(mode, indirect, drawcount, stride)
-    }
-    
-}
-        
-func (c *Context) MultiDrawArraysIndirectCount(mode u32, indirect ?[*]u8, drawcount i64, maxdrawcount i32, stride i32) void {
-    if command := c.glMultiDrawArraysIndirectCount {
-        fn := extern func(u32, ?[*]u8, i64, i32, i32) void(command)
-        fn(mode, indirect, drawcount, maxdrawcount, stride)
-    }
-    
-}
-        
 func (c *Context) MultiDrawElements(mode u32, count ?*i32, t u32, indices ?[*][*]u8, drawcount i32) void {
     if command := c.glMultiDrawElements {
         fn := extern func(u32, ?*i32, u32, ?[*][*]u8, i32) void(command)
@@ -4995,22 +3323,6 @@ func (c *Context) MultiDrawElementsBaseVertex(mode u32, count ?*i32, t u32, indi
     if command := c.glMultiDrawElementsBaseVertex {
         fn := extern func(u32, ?*i32, u32, ?[*][*]u8, i32, ?*i32) void(command)
         fn(mode, count, t, indices, drawcount, basevertex)
-    }
-    
-}
-        
-func (c *Context) MultiDrawElementsIndirect(mode u32, t u32, indirect ?[*]u8, drawcount i32, stride i32) void {
-    if command := c.glMultiDrawElementsIndirect {
-        fn := extern func(u32, u32, ?[*]u8, i32, i32) void(command)
-        fn(mode, t, indirect, drawcount, stride)
-    }
-    
-}
-        
-func (c *Context) MultiDrawElementsIndirectCount(mode u32, t u32, indirect ?[*]u8, drawcount i64, maxdrawcount i32, stride i32) void {
-    if command := c.glMultiDrawElementsIndirectCount {
-        fn := extern func(u32, u32, ?[*]u8, i64, i32, i32) void(command)
-        fn(mode, t, indirect, drawcount, maxdrawcount, stride)
     }
     
 }
@@ -5079,102 +3391,6 @@ func (c *Context) MultiTexCoordP4uiv(texture u32, t u32, coords ?*u32) void {
     
 }
         
-func (c *Context) NamedBufferData(buffer u32, size i64, data ?[*]u8, usage u32) void {
-    if command := c.glNamedBufferData {
-        fn := extern func(u32, i64, ?[*]u8, u32) void(command)
-        fn(buffer, size, data, usage)
-    }
-    
-}
-        
-func (c *Context) NamedBufferStorage(buffer u32, size i64, data ?[*]u8, flags u32) void {
-    if command := c.glNamedBufferStorage {
-        fn := extern func(u32, i64, ?[*]u8, u32) void(command)
-        fn(buffer, size, data, flags)
-    }
-    
-}
-        
-func (c *Context) NamedBufferSubData(buffer u32, offset i64, size i64, data ?[*]u8) void {
-    if command := c.glNamedBufferSubData {
-        fn := extern func(u32, i64, i64, ?[*]u8) void(command)
-        fn(buffer, offset, size, data)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferDrawBuffer(framebuffer u32, buf u32) void {
-    if command := c.glNamedFramebufferDrawBuffer {
-        fn := extern func(u32, u32) void(command)
-        fn(framebuffer, buf)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferDrawBuffers(framebuffer u32, n i32, bufs ?*u32) void {
-    if command := c.glNamedFramebufferDrawBuffers {
-        fn := extern func(u32, i32, ?*u32) void(command)
-        fn(framebuffer, n, bufs)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferParameteri(framebuffer u32, pname u32, param i32) void {
-    if command := c.glNamedFramebufferParameteri {
-        fn := extern func(u32, u32, i32) void(command)
-        fn(framebuffer, pname, param)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferReadBuffer(framebuffer u32, src u32) void {
-    if command := c.glNamedFramebufferReadBuffer {
-        fn := extern func(u32, u32) void(command)
-        fn(framebuffer, src)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferRenderbuffer(framebuffer u32, attachment u32, renderbuffertarget u32, renderbuffer u32) void {
-    if command := c.glNamedFramebufferRenderbuffer {
-        fn := extern func(u32, u32, u32, u32) void(command)
-        fn(framebuffer, attachment, renderbuffertarget, renderbuffer)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferTexture(framebuffer u32, attachment u32, texture u32, level i32) void {
-    if command := c.glNamedFramebufferTexture {
-        fn := extern func(u32, u32, u32, i32) void(command)
-        fn(framebuffer, attachment, texture, level)
-    }
-    
-}
-        
-func (c *Context) NamedFramebufferTextureLayer(framebuffer u32, attachment u32, texture u32, level i32, layer i32) void {
-    if command := c.glNamedFramebufferTextureLayer {
-        fn := extern func(u32, u32, u32, i32, i32) void(command)
-        fn(framebuffer, attachment, texture, level, layer)
-    }
-    
-}
-        
-func (c *Context) NamedRenderbufferStorage(renderbuffer u32, internalformat u32, width i32, height i32) void {
-    if command := c.glNamedRenderbufferStorage {
-        fn := extern func(u32, u32, i32, i32) void(command)
-        fn(renderbuffer, internalformat, width, height)
-    }
-    
-}
-        
-func (c *Context) NamedRenderbufferStorageMultisample(renderbuffer u32, samples i32, internalformat u32, width i32, height i32) void {
-    if command := c.glNamedRenderbufferStorageMultisample {
-        fn := extern func(u32, i32, u32, i32, i32) void(command)
-        fn(renderbuffer, samples, internalformat, width, height)
-    }
-    
-}
-        
 func (c *Context) NormalP3ui(t u32, coords u32) void {
     if command := c.glNormalP3ui {
         fn := extern func(u32, u32) void(command)
@@ -5187,22 +3403,6 @@ func (c *Context) NormalP3uiv(t u32, coords ?*u32) void {
     if command := c.glNormalP3uiv {
         fn := extern func(u32, ?*u32) void(command)
         fn(t, coords)
-    }
-    
-}
-        
-func (c *Context) ObjectLabel(identifier u32, name u32, length i32, label ?[*]u8) void {
-    if command := c.glObjectLabel {
-        fn := extern func(u32, u32, i32, ?[*]u8) void(command)
-        fn(identifier, name, length, label)
-    }
-    
-}
-        
-func (c *Context) ObjectPtrLabel(ptr ?[*]u8, length i32, label ?[*]u8) void {
-    if command := c.glObjectPtrLabel {
-        fn := extern func(?[*]u8, i32, ?[*]u8) void(command)
-        fn(ptr, length, label)
     }
     
 }
@@ -5299,22 +3499,6 @@ func (c *Context) PolygonOffset(factor f32, units f32) void {
     if command := c.glPolygonOffset {
         fn := extern func(f32, f32) void(command)
         fn(factor, units)
-    }
-    
-}
-        
-func (c *Context) PolygonOffsetClamp(factor f32, units f32, clamp f32) void {
-    if command := c.glPolygonOffsetClamp {
-        fn := extern func(f32, f32, f32) void(command)
-        fn(factor, units, clamp)
-    }
-    
-}
-        
-func (c *Context) PopDebugGroup() void {
-    if command := c.glPopDebugGroup {
-        fn := extern func() void(command)
-        fn()
     }
     
 }
@@ -5751,14 +3935,6 @@ func (c *Context) ProvokingVertex(mode u32) void {
     
 }
         
-func (c *Context) PushDebugGroup(source u32, id u32, length i32, message ?[*]u8) void {
-    if command := c.glPushDebugGroup {
-        fn := extern func(u32, u32, i32, ?[*]u8) void(command)
-        fn(source, id, length, message)
-    }
-    
-}
-        
 func (c *Context) QueryCounter(id u32, target u32) void {
     if command := c.glQueryCounter {
         fn := extern func(u32, u32) void(command)
@@ -5779,14 +3955,6 @@ func (c *Context) ReadPixels(x i32, y i32, width i32, height i32, format u32, t 
     if command := c.glReadPixels {
         fn := extern func(i32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
         fn(x, y, width, height, format, t, pixels)
-    }
-    
-}
-        
-func (c *Context) ReadnPixels(x i32, y i32, width i32, height i32, format u32, t u32, bufSize i32, data ?[*]u8) void {
-    if command := c.glReadnPixels {
-        fn := extern func(i32, i32, i32, i32, u32, u32, i32, ?[*]u8) void(command)
-        fn(x, y, width, height, format, t, bufSize, data)
     }
     
 }
@@ -5951,22 +4119,6 @@ func (c *Context) ShaderSource(shader u32, count i32, str ?[*][*]u8, length ?*i3
     
 }
         
-func (c *Context) ShaderStorageBlockBinding(program u32, storageBlockIndex u32, storageBlockBinding u32) void {
-    if command := c.glShaderStorageBlockBinding {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(program, storageBlockIndex, storageBlockBinding)
-    }
-    
-}
-        
-func (c *Context) SpecializeShader(shader u32, pEntryPoint ?[*]u8, numSpecializationConstants u32, pConstantIndex ?*u32, pConstantValue ?*u32) void {
-    if command := c.glSpecializeShader {
-        fn := extern func(u32, ?[*]u8, u32, ?*u32, ?*u32) void(command)
-        fn(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue)
-    }
-    
-}
-        
 func (c *Context) StencilFunc(fun u32, ref i32, mask u32) void {
     if command := c.glStencilFunc {
         fn := extern func(u32, i32, u32) void(command)
@@ -6019,14 +4171,6 @@ func (c *Context) TexBuffer(target u32, internalformat u32, buffer u32) void {
     if command := c.glTexBuffer {
         fn := extern func(u32, u32, u32) void(command)
         fn(target, internalformat, buffer)
-    }
-    
-}
-        
-func (c *Context) TexBufferRange(target u32, internalformat u32, buffer u32, offset i64, size i64) void {
-    if command := c.glTexBufferRange {
-        fn := extern func(u32, u32, u32, i64, i64) void(command)
-        fn(target, internalformat, buffer, offset, size)
     }
     
 }
@@ -6183,46 +4327,6 @@ func (c *Context) TexParameteriv(target u32, pname u32, params ?*i32) void {
     
 }
         
-func (c *Context) TexStorage1D(target u32, levels i32, internalformat u32, width i32) void {
-    if command := c.glTexStorage1D {
-        fn := extern func(u32, i32, u32, i32) void(command)
-        fn(target, levels, internalformat, width)
-    }
-    
-}
-        
-func (c *Context) TexStorage2D(target u32, levels i32, internalformat u32, width i32, height i32) void {
-    if command := c.glTexStorage2D {
-        fn := extern func(u32, i32, u32, i32, i32) void(command)
-        fn(target, levels, internalformat, width, height)
-    }
-    
-}
-        
-func (c *Context) TexStorage2DMultisample(target u32, samples i32, internalformat u32, width i32, height i32, fixedsamplelocations u8) void {
-    if command := c.glTexStorage2DMultisample {
-        fn := extern func(u32, i32, u32, i32, i32, u8) void(command)
-        fn(target, samples, internalformat, width, height, fixedsamplelocations)
-    }
-    
-}
-        
-func (c *Context) TexStorage3D(target u32, levels i32, internalformat u32, width i32, height i32, depth i32) void {
-    if command := c.glTexStorage3D {
-        fn := extern func(u32, i32, u32, i32, i32, i32) void(command)
-        fn(target, levels, internalformat, width, height, depth)
-    }
-    
-}
-        
-func (c *Context) TexStorage3DMultisample(target u32, samples i32, internalformat u32, width i32, height i32, depth i32, fixedsamplelocations u8) void {
-    if command := c.glTexStorage3DMultisample {
-        fn := extern func(u32, i32, u32, i32, i32, i32, u8) void(command)
-        fn(target, samples, internalformat, width, height, depth, fixedsamplelocations)
-    }
-    
-}
-        
 func (c *Context) TexSubImage1D(target u32, level i32, xoffset i32, width i32, format u32, t u32, pixels ?[*]u8) void {
     if command := c.glTexSubImage1D {
         fn := extern func(u32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
@@ -6243,166 +4347,6 @@ func (c *Context) TexSubImage3D(target u32, level i32, xoffset i32, yoffset i32,
     if command := c.glTexSubImage3D {
         fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
         fn(target, level, xoffset, yoffset, zoffset, width, height, depth, format, t, pixels)
-    }
-    
-}
-        
-func (c *Context) TextureBarrier() void {
-    if command := c.glTextureBarrier {
-        fn := extern func() void(command)
-        fn()
-    }
-    
-}
-        
-func (c *Context) TextureBuffer(texture u32, internalformat u32, buffer u32) void {
-    if command := c.glTextureBuffer {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(texture, internalformat, buffer)
-    }
-    
-}
-        
-func (c *Context) TextureBufferRange(texture u32, internalformat u32, buffer u32, offset i64, size i64) void {
-    if command := c.glTextureBufferRange {
-        fn := extern func(u32, u32, u32, i64, i64) void(command)
-        fn(texture, internalformat, buffer, offset, size)
-    }
-    
-}
-        
-func (c *Context) TextureParameterIiv(texture u32, pname u32, params ?*i32) void {
-    if command := c.glTextureParameterIiv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) TextureParameterIuiv(texture u32, pname u32, params ?*u32) void {
-    if command := c.glTextureParameterIuiv {
-        fn := extern func(u32, u32, ?*u32) void(command)
-        fn(texture, pname, params)
-    }
-    
-}
-        
-func (c *Context) TextureParameterf(texture u32, pname u32, param f32) void {
-    if command := c.glTextureParameterf {
-        fn := extern func(u32, u32, f32) void(command)
-        fn(texture, pname, param)
-    }
-    
-}
-        
-func (c *Context) TextureParameterfv(texture u32, pname u32, param ?*f32) void {
-    if command := c.glTextureParameterfv {
-        fn := extern func(u32, u32, ?*f32) void(command)
-        fn(texture, pname, param)
-    }
-    
-}
-        
-func (c *Context) TextureParameteri(texture u32, pname u32, param i32) void {
-    if command := c.glTextureParameteri {
-        fn := extern func(u32, u32, i32) void(command)
-        fn(texture, pname, param)
-    }
-    
-}
-        
-func (c *Context) TextureParameteriv(texture u32, pname u32, param ?*i32) void {
-    if command := c.glTextureParameteriv {
-        fn := extern func(u32, u32, ?*i32) void(command)
-        fn(texture, pname, param)
-    }
-    
-}
-        
-func (c *Context) TextureStorage1D(texture u32, levels i32, internalformat u32, width i32) void {
-    if command := c.glTextureStorage1D {
-        fn := extern func(u32, i32, u32, i32) void(command)
-        fn(texture, levels, internalformat, width)
-    }
-    
-}
-        
-func (c *Context) TextureStorage2D(texture u32, levels i32, internalformat u32, width i32, height i32) void {
-    if command := c.glTextureStorage2D {
-        fn := extern func(u32, i32, u32, i32, i32) void(command)
-        fn(texture, levels, internalformat, width, height)
-    }
-    
-}
-        
-func (c *Context) TextureStorage2DMultisample(texture u32, samples i32, internalformat u32, width i32, height i32, fixedsamplelocations u8) void {
-    if command := c.glTextureStorage2DMultisample {
-        fn := extern func(u32, i32, u32, i32, i32, u8) void(command)
-        fn(texture, samples, internalformat, width, height, fixedsamplelocations)
-    }
-    
-}
-        
-func (c *Context) TextureStorage3D(texture u32, levels i32, internalformat u32, width i32, height i32, depth i32) void {
-    if command := c.glTextureStorage3D {
-        fn := extern func(u32, i32, u32, i32, i32, i32) void(command)
-        fn(texture, levels, internalformat, width, height, depth)
-    }
-    
-}
-        
-func (c *Context) TextureStorage3DMultisample(texture u32, samples i32, internalformat u32, width i32, height i32, depth i32, fixedsamplelocations u8) void {
-    if command := c.glTextureStorage3DMultisample {
-        fn := extern func(u32, i32, u32, i32, i32, i32, u8) void(command)
-        fn(texture, samples, internalformat, width, height, depth, fixedsamplelocations)
-    }
-    
-}
-        
-func (c *Context) TextureSubImage1D(texture u32, level i32, xoffset i32, width i32, format u32, t u32, pixels ?[*]u8) void {
-    if command := c.glTextureSubImage1D {
-        fn := extern func(u32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, width, format, t, pixels)
-    }
-    
-}
-        
-func (c *Context) TextureSubImage2D(texture u32, level i32, xoffset i32, yoffset i32, width i32, height i32, format u32, t u32, pixels ?[*]u8) void {
-    if command := c.glTextureSubImage2D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, width, height, format, t, pixels)
-    }
-    
-}
-        
-func (c *Context) TextureSubImage3D(texture u32, level i32, xoffset i32, yoffset i32, zoffset i32, width i32, height i32, depth i32, format u32, t u32, pixels ?[*]u8) void {
-    if command := c.glTextureSubImage3D {
-        fn := extern func(u32, i32, i32, i32, i32, i32, i32, i32, u32, u32, ?[*]u8) void(command)
-        fn(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, t, pixels)
-    }
-    
-}
-        
-func (c *Context) TextureView(texture u32, target u32, origtexture u32, internalformat u32, minlevel u32, numlevels u32, minlayer u32, numlayers u32) void {
-    if command := c.glTextureView {
-        fn := extern func(u32, u32, u32, u32, u32, u32, u32, u32) void(command)
-        fn(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers)
-    }
-    
-}
-        
-func (c *Context) TransformFeedbackBufferBase(xfb u32, index u32, buffer u32) void {
-    if command := c.glTransformFeedbackBufferBase {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(xfb, index, buffer)
-    }
-    
-}
-        
-func (c *Context) TransformFeedbackBufferRange(xfb u32, index u32, buffer u32, offset i64, size i64) void {
-    if command := c.glTransformFeedbackBufferRange {
-        fn := extern func(u32, u32, u32, i64, i64) void(command)
-        fn(xfb, index, buffer, offset, size)
     }
     
 }
@@ -6839,14 +4783,6 @@ func (c *Context) UnmapBuffer(target u32) u8 {
     return 0
 }
         
-func (c *Context) UnmapNamedBuffer(buffer u32) u8 {
-    if command := c.glUnmapNamedBuffer {
-        fn := extern func(u32) u8(command)
-        return fn(buffer)
-    }
-    return 0
-}
-        
 func (c *Context) UseProgram(program u32) void {
     if command := c.glUseProgram {
         fn := extern func(u32) void(command)
@@ -6875,70 +4811,6 @@ func (c *Context) ValidateProgramPipeline(pipeline u32) void {
     if command := c.glValidateProgramPipeline {
         fn := extern func(u32) void(command)
         fn(pipeline)
-    }
-    
-}
-        
-func (c *Context) VertexArrayAttribBinding(vaobj u32, attribindex u32, bindingindex u32) void {
-    if command := c.glVertexArrayAttribBinding {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(vaobj, attribindex, bindingindex)
-    }
-    
-}
-        
-func (c *Context) VertexArrayAttribFormat(vaobj u32, attribindex u32, size i32, t u32, normalized u8, relativeoffset u32) void {
-    if command := c.glVertexArrayAttribFormat {
-        fn := extern func(u32, u32, i32, u32, u8, u32) void(command)
-        fn(vaobj, attribindex, size, t, normalized, relativeoffset)
-    }
-    
-}
-        
-func (c *Context) VertexArrayAttribIFormat(vaobj u32, attribindex u32, size i32, t u32, relativeoffset u32) void {
-    if command := c.glVertexArrayAttribIFormat {
-        fn := extern func(u32, u32, i32, u32, u32) void(command)
-        fn(vaobj, attribindex, size, t, relativeoffset)
-    }
-    
-}
-        
-func (c *Context) VertexArrayAttribLFormat(vaobj u32, attribindex u32, size i32, t u32, relativeoffset u32) void {
-    if command := c.glVertexArrayAttribLFormat {
-        fn := extern func(u32, u32, i32, u32, u32) void(command)
-        fn(vaobj, attribindex, size, t, relativeoffset)
-    }
-    
-}
-        
-func (c *Context) VertexArrayBindingDivisor(vaobj u32, bindingindex u32, divisor u32) void {
-    if command := c.glVertexArrayBindingDivisor {
-        fn := extern func(u32, u32, u32) void(command)
-        fn(vaobj, bindingindex, divisor)
-    }
-    
-}
-        
-func (c *Context) VertexArrayElementBuffer(vaobj u32, buffer u32) void {
-    if command := c.glVertexArrayElementBuffer {
-        fn := extern func(u32, u32) void(command)
-        fn(vaobj, buffer)
-    }
-    
-}
-        
-func (c *Context) VertexArrayVertexBuffer(vaobj u32, bindingindex u32, buffer u32, offset i64, stride i32) void {
-    if command := c.glVertexArrayVertexBuffer {
-        fn := extern func(u32, u32, u32, i64, i32) void(command)
-        fn(vaobj, bindingindex, buffer, offset, stride)
-    }
-    
-}
-        
-func (c *Context) VertexArrayVertexBuffers(vaobj u32, first u32, count i32, buffers ?*u32, offsets ?*i64, strides ?*i32) void {
-    if command := c.glVertexArrayVertexBuffers {
-        fn := extern func(u32, u32, i32, ?*u32, ?*i64, ?*i32) void(command)
-        fn(vaobj, first, count, buffers, offsets, strides)
     }
     
 }
@@ -7231,26 +5103,10 @@ func (c *Context) VertexAttrib4usv(index u32, v ?*u16) void {
     
 }
         
-func (c *Context) VertexAttribBinding(attribindex u32, bindingindex u32) void {
-    if command := c.glVertexAttribBinding {
-        fn := extern func(u32, u32) void(command)
-        fn(attribindex, bindingindex)
-    }
-    
-}
-        
 func (c *Context) VertexAttribDivisor(index u32, divisor u32) void {
     if command := c.glVertexAttribDivisor {
         fn := extern func(u32, u32) void(command)
         fn(index, divisor)
-    }
-    
-}
-        
-func (c *Context) VertexAttribFormat(attribindex u32, size i32, t u32, normalized u8, relativeoffset u32) void {
-    if command := c.glVertexAttribFormat {
-        fn := extern func(u32, i32, u32, u8, u32) void(command)
-        fn(attribindex, size, t, normalized, relativeoffset)
     }
     
 }
@@ -7415,14 +5271,6 @@ func (c *Context) VertexAttribI4usv(index u32, v ?*u16) void {
     
 }
         
-func (c *Context) VertexAttribIFormat(attribindex u32, size i32, t u32, relativeoffset u32) void {
-    if command := c.glVertexAttribIFormat {
-        fn := extern func(u32, i32, u32, u32) void(command)
-        fn(attribindex, size, t, relativeoffset)
-    }
-    
-}
-        
 func (c *Context) VertexAttribIPointer(index u32, size i32, t u32, stride i32, pointer ?[*]u8) void {
     if command := c.glVertexAttribIPointer {
         fn := extern func(u32, i32, u32, i32, ?[*]u8) void(command)
@@ -7491,14 +5339,6 @@ func (c *Context) VertexAttribL4dv(index u32, v ?*f64) void {
     if command := c.glVertexAttribL4dv {
         fn := extern func(u32, ?*f64) void(command)
         fn(index, v)
-    }
-    
-}
-        
-func (c *Context) VertexAttribLFormat(attribindex u32, size i32, t u32, relativeoffset u32) void {
-    if command := c.glVertexAttribLFormat {
-        fn := extern func(u32, i32, u32, u32) void(command)
-        fn(attribindex, size, t, relativeoffset)
     }
     
 }
@@ -7579,14 +5419,6 @@ func (c *Context) VertexAttribPointer(index u32, size i32, t u32, normalized u8,
     if command := c.glVertexAttribPointer {
         fn := extern func(u32, i32, u32, u8, i32, ?[*]u8) void(command)
         fn(index, size, t, normalized, stride, pointer)
-    }
-    
-}
-        
-func (c *Context) VertexBindingDivisor(bindingindex u32, divisor u32) void {
-    if command := c.glVertexBindingDivisor {
-        fn := extern func(u32, u32) void(command)
-        fn(bindingindex, divisor)
     }
     
 }
@@ -7695,24 +5527,15 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glBindBuffer: nil,
 		glBindBufferBase: nil,
 		glBindBufferRange: nil,
-		glBindBuffersBase: nil,
-		glBindBuffersRange: nil,
 		glBindFragDataLocation: nil,
 		glBindFragDataLocationIndexed: nil,
 		glBindFramebuffer: nil,
-		glBindImageTexture: nil,
-		glBindImageTextures: nil,
 		glBindProgramPipeline: nil,
 		glBindRenderbuffer: nil,
 		glBindSampler: nil,
-		glBindSamplers: nil,
 		glBindTexture: nil,
-		glBindTextureUnit: nil,
-		glBindTextures: nil,
 		glBindTransformFeedback: nil,
 		glBindVertexArray: nil,
-		glBindVertexBuffer: nil,
-		glBindVertexBuffers: nil,
 		glBlendColor: nil,
 		glBlendEquation: nil,
 		glBlendEquationSeparate: nil,
@@ -7723,16 +5546,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glBlendFuncSeparatei: nil,
 		glBlendFunci: nil,
 		glBlitFramebuffer: nil,
-		glBlitNamedFramebuffer: nil,
 		glBufferData: nil,
-		glBufferStorage: nil,
 		glBufferSubData: nil,
 		glCheckFramebufferStatus: nil,
-		glCheckNamedFramebufferStatus: nil,
 		glClampColor: nil,
 		glClear: nil,
-		glClearBufferData: nil,
-		glClearBufferSubData: nil,
 		glClearBufferfi: nil,
 		glClearBufferfv: nil,
 		glClearBufferiv: nil,
@@ -7740,17 +5558,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glClearColor: nil,
 		glClearDepth: nil,
 		glClearDepthf: nil,
-		glClearNamedBufferData: nil,
-		glClearNamedBufferSubData: nil,
-		glClearNamedFramebufferfi: nil,
-		glClearNamedFramebufferfv: nil,
-		glClearNamedFramebufferiv: nil,
-		glClearNamedFramebufferuiv: nil,
 		glClearStencil: nil,
-		glClearTexImage: nil,
-		glClearTexSubImage: nil,
 		glClientWaitSync: nil,
-		glClipControl: nil,
 		glColorMask: nil,
 		glColorMaski: nil,
 		glColorP3ui: nil,
@@ -7764,36 +5573,16 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glCompressedTexSubImage1D: nil,
 		glCompressedTexSubImage2D: nil,
 		glCompressedTexSubImage3D: nil,
-		glCompressedTextureSubImage1D: nil,
-		glCompressedTextureSubImage2D: nil,
-		glCompressedTextureSubImage3D: nil,
 		glCopyBufferSubData: nil,
-		glCopyImageSubData: nil,
-		glCopyNamedBufferSubData: nil,
 		glCopyTexImage1D: nil,
 		glCopyTexImage2D: nil,
 		glCopyTexSubImage1D: nil,
 		glCopyTexSubImage2D: nil,
 		glCopyTexSubImage3D: nil,
-		glCopyTextureSubImage1D: nil,
-		glCopyTextureSubImage2D: nil,
-		glCopyTextureSubImage3D: nil,
-		glCreateBuffers: nil,
-		glCreateFramebuffers: nil,
 		glCreateProgram: nil,
-		glCreateProgramPipelines: nil,
-		glCreateQueries: nil,
-		glCreateRenderbuffers: nil,
-		glCreateSamplers: nil,
 		glCreateShader: nil,
 		glCreateShaderProgramv: nil,
-		glCreateTextures: nil,
-		glCreateTransformFeedbacks: nil,
-		glCreateVertexArrays: nil,
 		glCullFace: nil,
-		glDebugMessageCallback: nil,
-		glDebugMessageControl: nil,
-		glDebugMessageInsert: nil,
 		glDeleteBuffers: nil,
 		glDeleteFramebuffers: nil,
 		glDeleteProgram: nil,
@@ -7814,32 +5603,23 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glDepthRangef: nil,
 		glDetachShader: nil,
 		glDisable: nil,
-		glDisableVertexArrayAttrib: nil,
 		glDisableVertexAttribArray: nil,
 		glDisablei: nil,
-		glDispatchCompute: nil,
-		glDispatchComputeIndirect: nil,
 		glDrawArrays: nil,
 		glDrawArraysIndirect: nil,
 		glDrawArraysInstanced: nil,
-		glDrawArraysInstancedBaseInstance: nil,
 		glDrawBuffer: nil,
 		glDrawBuffers: nil,
 		glDrawElements: nil,
 		glDrawElementsBaseVertex: nil,
 		glDrawElementsIndirect: nil,
 		glDrawElementsInstanced: nil,
-		glDrawElementsInstancedBaseInstance: nil,
 		glDrawElementsInstancedBaseVertex: nil,
-		glDrawElementsInstancedBaseVertexBaseInstance: nil,
 		glDrawRangeElements: nil,
 		glDrawRangeElementsBaseVertex: nil,
 		glDrawTransformFeedback: nil,
-		glDrawTransformFeedbackInstanced: nil,
 		glDrawTransformFeedbackStream: nil,
-		glDrawTransformFeedbackStreamInstanced: nil,
 		glEnable: nil,
-		glEnableVertexArrayAttrib: nil,
 		glEnableVertexAttribArray: nil,
 		glEnablei: nil,
 		glEndConditionalRender: nil,
@@ -7850,8 +5630,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glFinish: nil,
 		glFlush: nil,
 		glFlushMappedBufferRange: nil,
-		glFlushMappedNamedBufferRange: nil,
-		glFramebufferParameteri: nil,
 		glFramebufferRenderbuffer: nil,
 		glFramebufferTexture: nil,
 		glFramebufferTexture1D: nil,
@@ -7869,8 +5647,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGenTransformFeedbacks: nil,
 		glGenVertexArrays: nil,
 		glGenerateMipmap: nil,
-		glGenerateTextureMipmap: nil,
-		glGetActiveAtomicCounterBufferiv: nil,
 		glGetActiveAttrib: nil,
 		glGetActiveSubroutineName: nil,
 		glGetActiveSubroutineUniformName: nil,
@@ -7889,9 +5665,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGetBufferPointerv: nil,
 		glGetBufferSubData: nil,
 		glGetCompressedTexImage: nil,
-		glGetCompressedTextureImage: nil,
-		glGetCompressedTextureSubImage: nil,
-		glGetDebugMessageLog: nil,
 		glGetDoublei_v: nil,
 		glGetDoublev: nil,
 		glGetError: nil,
@@ -7900,41 +5673,17 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGetFragDataIndex: nil,
 		glGetFragDataLocation: nil,
 		glGetFramebufferAttachmentParameteriv: nil,
-		glGetFramebufferParameteriv: nil,
-		glGetGraphicsResetStatus: nil,
 		glGetInteger64i_v: nil,
 		glGetInteger64v: nil,
 		glGetIntegeri_v: nil,
 		glGetIntegerv: nil,
-		glGetInternalformati64v: nil,
-		glGetInternalformativ: nil,
 		glGetMultisamplefv: nil,
-		glGetNamedBufferParameteri64v: nil,
-		glGetNamedBufferParameteriv: nil,
-		glGetNamedBufferPointerv: nil,
-		glGetNamedBufferSubData: nil,
-		glGetNamedFramebufferAttachmentParameteriv: nil,
-		glGetNamedFramebufferParameteriv: nil,
-		glGetNamedRenderbufferParameteriv: nil,
-		glGetObjectLabel: nil,
-		glGetObjectPtrLabel: nil,
-		glGetPointerv: nil,
 		glGetProgramBinary: nil,
 		glGetProgramInfoLog: nil,
-		glGetProgramInterfaceiv: nil,
 		glGetProgramPipelineInfoLog: nil,
 		glGetProgramPipelineiv: nil,
-		glGetProgramResourceIndex: nil,
-		glGetProgramResourceLocation: nil,
-		glGetProgramResourceLocationIndex: nil,
-		glGetProgramResourceName: nil,
-		glGetProgramResourceiv: nil,
 		glGetProgramStageiv: nil,
 		glGetProgramiv: nil,
-		glGetQueryBufferObjecti64v: nil,
-		glGetQueryBufferObjectiv: nil,
-		glGetQueryBufferObjectui64v: nil,
-		glGetQueryBufferObjectuiv: nil,
 		glGetQueryIndexediv: nil,
 		glGetQueryObjecti64v: nil,
 		glGetQueryObjectiv: nil,
@@ -7962,18 +5711,7 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGetTexParameterIuiv: nil,
 		glGetTexParameterfv: nil,
 		glGetTexParameteriv: nil,
-		glGetTextureImage: nil,
-		glGetTextureLevelParameterfv: nil,
-		glGetTextureLevelParameteriv: nil,
-		glGetTextureParameterIiv: nil,
-		glGetTextureParameterIuiv: nil,
-		glGetTextureParameterfv: nil,
-		glGetTextureParameteriv: nil,
-		glGetTextureSubImage: nil,
 		glGetTransformFeedbackVarying: nil,
-		glGetTransformFeedbacki64_v: nil,
-		glGetTransformFeedbacki_v: nil,
-		glGetTransformFeedbackiv: nil,
 		glGetUniformBlockIndex: nil,
 		glGetUniformIndices: nil,
 		glGetUniformLocation: nil,
@@ -7982,9 +5720,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGetUniformfv: nil,
 		glGetUniformiv: nil,
 		glGetUniformuiv: nil,
-		glGetVertexArrayIndexed64iv: nil,
-		glGetVertexArrayIndexediv: nil,
-		glGetVertexArrayiv: nil,
 		glGetVertexAttribIiv: nil,
 		glGetVertexAttribIuiv: nil,
 		glGetVertexAttribLdv: nil,
@@ -7992,33 +5727,7 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glGetVertexAttribdv: nil,
 		glGetVertexAttribfv: nil,
 		glGetVertexAttribiv: nil,
-		glGetnColorTable: nil,
-		glGetnCompressedTexImage: nil,
-		glGetnConvolutionFilter: nil,
-		glGetnHistogram: nil,
-		glGetnMapdv: nil,
-		glGetnMapfv: nil,
-		glGetnMapiv: nil,
-		glGetnMinmax: nil,
-		glGetnPixelMapfv: nil,
-		glGetnPixelMapuiv: nil,
-		glGetnPixelMapusv: nil,
-		glGetnPolygonStipple: nil,
-		glGetnSeparableFilter: nil,
-		glGetnTexImage: nil,
-		glGetnUniformdv: nil,
-		glGetnUniformfv: nil,
-		glGetnUniformiv: nil,
-		glGetnUniformuiv: nil,
 		glHint: nil,
-		glInvalidateBufferData: nil,
-		glInvalidateBufferSubData: nil,
-		glInvalidateFramebuffer: nil,
-		glInvalidateNamedFramebufferData: nil,
-		glInvalidateNamedFramebufferSubData: nil,
-		glInvalidateSubFramebuffer: nil,
-		glInvalidateTexImage: nil,
-		glInvalidateTexSubImage: nil,
 		glIsBuffer: nil,
 		glIsEnabled: nil,
 		glIsEnabledi: nil,
@@ -8038,18 +5747,10 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glLogicOp: nil,
 		glMapBuffer: nil,
 		glMapBufferRange: nil,
-		glMapNamedBuffer: nil,
-		glMapNamedBufferRange: nil,
-		glMemoryBarrier: nil,
-		glMemoryBarrierByRegion: nil,
 		glMinSampleShading: nil,
 		glMultiDrawArrays: nil,
-		glMultiDrawArraysIndirect: nil,
-		glMultiDrawArraysIndirectCount: nil,
 		glMultiDrawElements: nil,
 		glMultiDrawElementsBaseVertex: nil,
-		glMultiDrawElementsIndirect: nil,
-		glMultiDrawElementsIndirectCount: nil,
 		glMultiTexCoordP1ui: nil,
 		glMultiTexCoordP1uiv: nil,
 		glMultiTexCoordP2ui: nil,
@@ -8058,22 +5759,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glMultiTexCoordP3uiv: nil,
 		glMultiTexCoordP4ui: nil,
 		glMultiTexCoordP4uiv: nil,
-		glNamedBufferData: nil,
-		glNamedBufferStorage: nil,
-		glNamedBufferSubData: nil,
-		glNamedFramebufferDrawBuffer: nil,
-		glNamedFramebufferDrawBuffers: nil,
-		glNamedFramebufferParameteri: nil,
-		glNamedFramebufferReadBuffer: nil,
-		glNamedFramebufferRenderbuffer: nil,
-		glNamedFramebufferTexture: nil,
-		glNamedFramebufferTextureLayer: nil,
-		glNamedRenderbufferStorage: nil,
-		glNamedRenderbufferStorageMultisample: nil,
 		glNormalP3ui: nil,
 		glNormalP3uiv: nil,
-		glObjectLabel: nil,
-		glObjectPtrLabel: nil,
 		glPatchParameterfv: nil,
 		glPatchParameteri: nil,
 		glPauseTransformFeedback: nil,
@@ -8086,8 +5773,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glPointSize: nil,
 		glPolygonMode: nil,
 		glPolygonOffset: nil,
-		glPolygonOffsetClamp: nil,
-		glPopDebugGroup: nil,
 		glPrimitiveRestartIndex: nil,
 		glProgramBinary: nil,
 		glProgramParameteri: nil,
@@ -8142,11 +5827,9 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glProgramUniformMatrix4x3dv: nil,
 		glProgramUniformMatrix4x3fv: nil,
 		glProvokingVertex: nil,
-		glPushDebugGroup: nil,
 		glQueryCounter: nil,
 		glReadBuffer: nil,
 		glReadPixels: nil,
-		glReadnPixels: nil,
 		glReleaseShaderCompiler: nil,
 		glRenderbufferStorage: nil,
 		glRenderbufferStorageMultisample: nil,
@@ -8167,8 +5850,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glSecondaryColorP3uiv: nil,
 		glShaderBinary: nil,
 		glShaderSource: nil,
-		glShaderStorageBlockBinding: nil,
-		glSpecializeShader: nil,
 		glStencilFunc: nil,
 		glStencilFuncSeparate: nil,
 		glStencilMask: nil,
@@ -8176,7 +5857,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glStencilOp: nil,
 		glStencilOpSeparate: nil,
 		glTexBuffer: nil,
-		glTexBufferRange: nil,
 		glTexCoordP1ui: nil,
 		glTexCoordP1uiv: nil,
 		glTexCoordP2ui: nil,
@@ -8196,34 +5876,9 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glTexParameterfv: nil,
 		glTexParameteri: nil,
 		glTexParameteriv: nil,
-		glTexStorage1D: nil,
-		glTexStorage2D: nil,
-		glTexStorage2DMultisample: nil,
-		glTexStorage3D: nil,
-		glTexStorage3DMultisample: nil,
 		glTexSubImage1D: nil,
 		glTexSubImage2D: nil,
 		glTexSubImage3D: nil,
-		glTextureBarrier: nil,
-		glTextureBuffer: nil,
-		glTextureBufferRange: nil,
-		glTextureParameterIiv: nil,
-		glTextureParameterIuiv: nil,
-		glTextureParameterf: nil,
-		glTextureParameterfv: nil,
-		glTextureParameteri: nil,
-		glTextureParameteriv: nil,
-		glTextureStorage1D: nil,
-		glTextureStorage2D: nil,
-		glTextureStorage2DMultisample: nil,
-		glTextureStorage3D: nil,
-		glTextureStorage3DMultisample: nil,
-		glTextureSubImage1D: nil,
-		glTextureSubImage2D: nil,
-		glTextureSubImage3D: nil,
-		glTextureView: nil,
-		glTransformFeedbackBufferBase: nil,
-		glTransformFeedbackBufferRange: nil,
 		glTransformFeedbackVaryings: nil,
 		glUniform1d: nil,
 		glUniform1dv: nil,
@@ -8278,19 +5933,10 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glUniformMatrix4x3fv: nil,
 		glUniformSubroutinesuiv: nil,
 		glUnmapBuffer: nil,
-		glUnmapNamedBuffer: nil,
 		glUseProgram: nil,
 		glUseProgramStages: nil,
 		glValidateProgram: nil,
 		glValidateProgramPipeline: nil,
-		glVertexArrayAttribBinding: nil,
-		glVertexArrayAttribFormat: nil,
-		glVertexArrayAttribIFormat: nil,
-		glVertexArrayAttribLFormat: nil,
-		glVertexArrayBindingDivisor: nil,
-		glVertexArrayElementBuffer: nil,
-		glVertexArrayVertexBuffer: nil,
-		glVertexArrayVertexBuffers: nil,
 		glVertexAttrib1d: nil,
 		glVertexAttrib1dv: nil,
 		glVertexAttrib1f: nil,
@@ -8327,9 +5973,7 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glVertexAttrib4ubv: nil,
 		glVertexAttrib4uiv: nil,
 		glVertexAttrib4usv: nil,
-		glVertexAttribBinding: nil,
 		glVertexAttribDivisor: nil,
-		glVertexAttribFormat: nil,
 		glVertexAttribI1i: nil,
 		glVertexAttribI1iv: nil,
 		glVertexAttribI1ui: nil,
@@ -8350,7 +5994,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glVertexAttribI4ui: nil,
 		glVertexAttribI4uiv: nil,
 		glVertexAttribI4usv: nil,
-		glVertexAttribIFormat: nil,
 		glVertexAttribIPointer: nil,
 		glVertexAttribL1d: nil,
 		glVertexAttribL1dv: nil,
@@ -8360,7 +6003,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glVertexAttribL3dv: nil,
 		glVertexAttribL4d: nil,
 		glVertexAttribL4dv: nil,
-		glVertexAttribLFormat: nil,
 		glVertexAttribLPointer: nil,
 		glVertexAttribP1ui: nil,
 		glVertexAttribP1uiv: nil,
@@ -8371,7 +6013,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 		glVertexAttribP4ui: nil,
 		glVertexAttribP4uiv: nil,
 		glVertexAttribPointer: nil,
-		glVertexBindingDivisor: nil,
 		glVertexP2ui: nil,
 		glVertexP2uiv: nil,
 		glVertexP3ui: nil,
@@ -8421,12 +6062,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glBindBufferRange "
 	c.glBindBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glBindBuffersBase "
-	c.glBindBuffersBase = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindBuffersRange "
-	c.glBindBuffersRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glBindFragDataLocation "
 	c.glBindFragDataLocation = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -8435,12 +6070,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glBindFramebuffer "
 	c.glBindFramebuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindImageTexture "
-	c.glBindImageTexture = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindImageTextures "
-	c.glBindImageTextures = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glBindProgramPipeline "
 	c.glBindProgramPipeline = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8451,29 +6080,14 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glBindSampler "
 	c.glBindSampler = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glBindSamplers "
-	c.glBindSamplers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glBindTexture "
 	c.glBindTexture = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindTextureUnit "
-	c.glBindTextureUnit = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindTextures "
-	c.glBindTextures = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glBindTransformFeedback "
 	c.glBindTransformFeedback = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glBindVertexArray "
 	c.glBindVertexArray = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindVertexBuffer "
-	c.glBindVertexBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBindVertexBuffers "
-	c.glBindVertexBuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glBlendColor "
 	c.glBlendColor = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8505,14 +6119,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glBlitFramebuffer "
 	c.glBlitFramebuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glBlitNamedFramebuffer "
-	c.glBlitNamedFramebuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glBufferData "
 	c.glBufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glBufferStorage "
-	c.glBufferStorage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glBufferSubData "
 	c.glBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8520,20 +6128,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glCheckFramebufferStatus "
 	c.glCheckFramebufferStatus = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glCheckNamedFramebufferStatus "
-	c.glCheckNamedFramebufferStatus = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glClampColor "
 	c.glClampColor = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glClear "
 	c.glClear = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearBufferData "
-	c.glClearBufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearBufferSubData "
-	c.glClearBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glClearBufferfi "
 	c.glClearBufferfi = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8556,38 +6155,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glClearDepthf "
 	c.glClearDepthf = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glClearNamedBufferData "
-	c.glClearNamedBufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearNamedBufferSubData "
-	c.glClearNamedBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearNamedFramebufferfi "
-	c.glClearNamedFramebufferfi = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearNamedFramebufferfv "
-	c.glClearNamedFramebufferfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearNamedFramebufferiv "
-	c.glClearNamedFramebufferiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearNamedFramebufferuiv "
-	c.glClearNamedFramebufferuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glClearStencil "
 	c.glClearStencil = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glClearTexImage "
-	c.glClearTexImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClearTexSubImage "
-	c.glClearTexSubImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glClientWaitSync "
 	c.glClientWaitSync = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glClipControl "
-	c.glClipControl = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glColorMask "
 	c.glColorMask = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8628,23 +6200,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glCompressedTexSubImage3D "
 	c.glCompressedTexSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glCompressedTextureSubImage1D "
-	c.glCompressedTextureSubImage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCompressedTextureSubImage2D "
-	c.glCompressedTextureSubImage2D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCompressedTextureSubImage3D "
-	c.glCompressedTextureSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glCopyBufferSubData "
 	c.glCopyBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCopyImageSubData "
-	c.glCopyImageSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCopyNamedBufferSubData "
-	c.glCopyNamedBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glCopyTexImage1D "
 	c.glCopyTexImage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8661,35 +6218,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glCopyTexSubImage3D "
 	c.glCopyTexSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glCopyTextureSubImage1D "
-	c.glCopyTextureSubImage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCopyTextureSubImage2D "
-	c.glCopyTextureSubImage2D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCopyTextureSubImage3D "
-	c.glCopyTextureSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateBuffers "
-	c.glCreateBuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateFramebuffers "
-	c.glCreateFramebuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glCreateProgram "
 	c.glCreateProgram = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateProgramPipelines "
-	c.glCreateProgramPipelines = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateQueries "
-	c.glCreateQueries = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateRenderbuffers "
-	c.glCreateRenderbuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateSamplers "
-	c.glCreateSamplers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glCreateShader "
 	c.glCreateShader = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8697,26 +6227,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glCreateShaderProgramv "
 	c.glCreateShaderProgramv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glCreateTextures "
-	c.glCreateTextures = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateTransformFeedbacks "
-	c.glCreateTransformFeedbacks = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glCreateVertexArrays "
-	c.glCreateVertexArrays = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glCullFace "
 	c.glCullFace = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDebugMessageCallback "
-	c.glDebugMessageCallback = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDebugMessageControl "
-	c.glDebugMessageControl = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDebugMessageInsert "
-	c.glDebugMessageInsert = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glDeleteBuffers "
 	c.glDeleteBuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8778,20 +6290,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glDisable "
 	c.glDisable = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glDisableVertexArrayAttrib "
-	c.glDisableVertexArrayAttrib = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glDisableVertexAttribArray "
 	c.glDisableVertexAttribArray = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glDisablei "
 	c.glDisablei = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDispatchCompute "
-	c.glDispatchCompute = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDispatchComputeIndirect "
-	c.glDispatchComputeIndirect = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glDrawArrays "
 	c.glDrawArrays = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8801,9 +6304,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glDrawArraysInstanced "
 	c.glDrawArraysInstanced = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDrawArraysInstancedBaseInstance "
-	c.glDrawArraysInstancedBaseInstance = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glDrawBuffer "
 	c.glDrawBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8823,14 +6323,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glDrawElementsInstanced "
 	c.glDrawElementsInstanced = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glDrawElementsInstancedBaseInstance "
-	c.glDrawElementsInstancedBaseInstance = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glDrawElementsInstancedBaseVertex "
 	c.glDrawElementsInstancedBaseVertex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glDrawElementsInstancedBaseVertexBaseInstance "
-	c.glDrawElementsInstancedBaseVertexBaseInstance = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glDrawRangeElements "
 	c.glDrawRangeElements = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8841,20 +6335,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glDrawTransformFeedback "
 	c.glDrawTransformFeedback = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glDrawTransformFeedbackInstanced "
-	c.glDrawTransformFeedbackInstanced = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glDrawTransformFeedbackStream "
 	c.glDrawTransformFeedbackStream = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glDrawTransformFeedbackStreamInstanced "
-	c.glDrawTransformFeedbackStreamInstanced = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glEnable "
 	c.glEnable = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glEnableVertexArrayAttrib "
-	c.glEnableVertexArrayAttrib = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glEnableVertexAttribArray "
 	c.glEnableVertexAttribArray = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8885,12 +6370,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glFlushMappedBufferRange "
 	c.glFlushMappedBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glFlushMappedNamedBufferRange "
-	c.glFlushMappedNamedBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glFramebufferParameteri "
-	c.glFramebufferParameteri = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glFramebufferRenderbuffer "
 	c.glFramebufferRenderbuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -8942,12 +6421,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glGenerateMipmap "
 	c.glGenerateMipmap = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGenerateTextureMipmap "
-	c.glGenerateTextureMipmap = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetActiveAtomicCounterBufferiv "
-	c.glGetActiveAtomicCounterBufferiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetActiveAttrib "
 	c.glGetActiveAttrib = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9003,15 +6476,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetCompressedTexImage "
 	c.glGetCompressedTexImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetCompressedTextureImage "
-	c.glGetCompressedTextureImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetCompressedTextureSubImage "
-	c.glGetCompressedTextureSubImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetDebugMessageLog "
-	c.glGetDebugMessageLog = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetDoublei_v "
 	c.glGetDoublei_v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9036,12 +6500,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetFramebufferAttachmentParameteriv "
 	c.glGetFramebufferAttachmentParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetFramebufferParameteriv "
-	c.glGetFramebufferParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetGraphicsResetStatus "
-	c.glGetGraphicsResetStatus = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetInteger64i_v "
 	c.glGetInteger64i_v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9054,44 +6512,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetIntegerv "
 	c.glGetIntegerv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetInternalformati64v "
-	c.glGetInternalformati64v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetInternalformativ "
-	c.glGetInternalformativ = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetMultisamplefv "
 	c.glGetMultisamplefv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedBufferParameteri64v "
-	c.glGetNamedBufferParameteri64v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedBufferParameteriv "
-	c.glGetNamedBufferParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedBufferPointerv "
-	c.glGetNamedBufferPointerv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedBufferSubData "
-	c.glGetNamedBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedFramebufferAttachmentParameteriv "
-	c.glGetNamedFramebufferAttachmentParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedFramebufferParameteriv "
-	c.glGetNamedFramebufferParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetNamedRenderbufferParameteriv "
-	c.glGetNamedRenderbufferParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetObjectLabel "
-	c.glGetObjectLabel = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetObjectPtrLabel "
-	c.glGetObjectPtrLabel = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetPointerv "
-	c.glGetPointerv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetProgramBinary "
 	c.glGetProgramBinary = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9099,47 +6521,17 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetProgramInfoLog "
 	c.glGetProgramInfoLog = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetProgramInterfaceiv "
-	c.glGetProgramInterfaceiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetProgramPipelineInfoLog "
 	c.glGetProgramPipelineInfoLog = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetProgramPipelineiv "
 	c.glGetProgramPipelineiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetProgramResourceIndex "
-	c.glGetProgramResourceIndex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetProgramResourceLocation "
-	c.glGetProgramResourceLocation = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetProgramResourceLocationIndex "
-	c.glGetProgramResourceLocationIndex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetProgramResourceName "
-	c.glGetProgramResourceName = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetProgramResourceiv "
-	c.glGetProgramResourceiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetProgramStageiv "
 	c.glGetProgramStageiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetProgramiv "
 	c.glGetProgramiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetQueryBufferObjecti64v "
-	c.glGetQueryBufferObjecti64v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetQueryBufferObjectiv "
-	c.glGetQueryBufferObjectiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetQueryBufferObjectui64v "
-	c.glGetQueryBufferObjectui64v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetQueryBufferObjectuiv "
-	c.glGetQueryBufferObjectuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetQueryIndexediv "
 	c.glGetQueryIndexediv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9222,41 +6614,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetTexParameteriv "
 	c.glGetTexParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetTextureImage "
-	c.glGetTextureImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureLevelParameterfv "
-	c.glGetTextureLevelParameterfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureLevelParameteriv "
-	c.glGetTextureLevelParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureParameterIiv "
-	c.glGetTextureParameterIiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureParameterIuiv "
-	c.glGetTextureParameterIuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureParameterfv "
-	c.glGetTextureParameterfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureParameteriv "
-	c.glGetTextureParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTextureSubImage "
-	c.glGetTextureSubImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetTransformFeedbackVarying "
 	c.glGetTransformFeedbackVarying = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTransformFeedbacki64_v "
-	c.glGetTransformFeedbacki64_v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTransformFeedbacki_v "
-	c.glGetTransformFeedbacki_v = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetTransformFeedbackiv "
-	c.glGetTransformFeedbackiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glGetUniformBlockIndex "
 	c.glGetUniformBlockIndex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9282,15 +6641,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetUniformuiv "
 	c.glGetUniformuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetVertexArrayIndexed64iv "
-	c.glGetVertexArrayIndexed64iv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetVertexArrayIndexediv "
-	c.glGetVertexArrayIndexediv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetVertexArrayiv "
-	c.glGetVertexArrayiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glGetVertexAttribIiv "
 	c.glGetVertexAttribIiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9312,86 +6662,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glGetVertexAttribiv "
 	c.glGetVertexAttribiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glGetnColorTable "
-	c.glGetnColorTable = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnCompressedTexImage "
-	c.glGetnCompressedTexImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnConvolutionFilter "
-	c.glGetnConvolutionFilter = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnHistogram "
-	c.glGetnHistogram = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnMapdv "
-	c.glGetnMapdv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnMapfv "
-	c.glGetnMapfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnMapiv "
-	c.glGetnMapiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnMinmax "
-	c.glGetnMinmax = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnPixelMapfv "
-	c.glGetnPixelMapfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnPixelMapuiv "
-	c.glGetnPixelMapuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnPixelMapusv "
-	c.glGetnPixelMapusv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnPolygonStipple "
-	c.glGetnPolygonStipple = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnSeparableFilter "
-	c.glGetnSeparableFilter = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnTexImage "
-	c.glGetnTexImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnUniformdv "
-	c.glGetnUniformdv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnUniformfv "
-	c.glGetnUniformfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnUniformiv "
-	c.glGetnUniformiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glGetnUniformuiv "
-	c.glGetnUniformuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glHint "
 	c.glHint = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateBufferData "
-	c.glInvalidateBufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateBufferSubData "
-	c.glInvalidateBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateFramebuffer "
-	c.glInvalidateFramebuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateNamedFramebufferData "
-	c.glInvalidateNamedFramebufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateNamedFramebufferSubData "
-	c.glInvalidateNamedFramebufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateSubFramebuffer "
-	c.glInvalidateSubFramebuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateTexImage "
-	c.glInvalidateTexImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glInvalidateTexSubImage "
-	c.glInvalidateTexSubImage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glIsBuffer "
 	c.glIsBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9450,41 +6722,17 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glMapBufferRange "
 	c.glMapBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glMapNamedBuffer "
-	c.glMapNamedBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMapNamedBufferRange "
-	c.glMapNamedBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMemoryBarrier "
-	c.glMemoryBarrier = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMemoryBarrierByRegion "
-	c.glMemoryBarrierByRegion = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glMinSampleShading "
 	c.glMinSampleShading = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glMultiDrawArrays "
 	c.glMultiDrawArrays = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glMultiDrawArraysIndirect "
-	c.glMultiDrawArraysIndirect = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMultiDrawArraysIndirectCount "
-	c.glMultiDrawArraysIndirectCount = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glMultiDrawElements "
 	c.glMultiDrawElements = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glMultiDrawElementsBaseVertex "
 	c.glMultiDrawElementsBaseVertex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMultiDrawElementsIndirect "
-	c.glMultiDrawElementsIndirect = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glMultiDrawElementsIndirectCount "
-	c.glMultiDrawElementsIndirectCount = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glMultiTexCoordP1ui "
 	c.glMultiTexCoordP1ui = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9510,53 +6758,11 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glMultiTexCoordP4uiv "
 	c.glMultiTexCoordP4uiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glNamedBufferData "
-	c.glNamedBufferData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedBufferStorage "
-	c.glNamedBufferStorage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedBufferSubData "
-	c.glNamedBufferSubData = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferDrawBuffer "
-	c.glNamedFramebufferDrawBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferDrawBuffers "
-	c.glNamedFramebufferDrawBuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferParameteri "
-	c.glNamedFramebufferParameteri = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferReadBuffer "
-	c.glNamedFramebufferReadBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferRenderbuffer "
-	c.glNamedFramebufferRenderbuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferTexture "
-	c.glNamedFramebufferTexture = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedFramebufferTextureLayer "
-	c.glNamedFramebufferTextureLayer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedRenderbufferStorage "
-	c.glNamedRenderbufferStorage = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glNamedRenderbufferStorageMultisample "
-	c.glNamedRenderbufferStorageMultisample = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glNormalP3ui "
 	c.glNormalP3ui = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glNormalP3uiv "
 	c.glNormalP3uiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glObjectLabel "
-	c.glObjectLabel = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glObjectPtrLabel "
-	c.glObjectPtrLabel = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glPatchParameterfv "
 	c.glPatchParameterfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9593,12 +6799,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glPolygonOffset "
 	c.glPolygonOffset = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glPolygonOffsetClamp "
-	c.glPolygonOffsetClamp = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glPopDebugGroup "
-	c.glPopDebugGroup = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glPrimitiveRestartIndex "
 	c.glPrimitiveRestartIndex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9762,9 +6962,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glProvokingVertex "
 	c.glProvokingVertex = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glPushDebugGroup "
-	c.glPushDebugGroup = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glQueryCounter "
 	c.glQueryCounter = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9773,9 +6970,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glReadPixels "
 	c.glReadPixels = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glReadnPixels "
-	c.glReadnPixels = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glReleaseShaderCompiler "
 	c.glReleaseShaderCompiler = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9837,12 +7031,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glShaderSource "
 	c.glShaderSource = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glShaderStorageBlockBinding "
-	c.glShaderStorageBlockBinding = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glSpecializeShader "
-	c.glSpecializeShader = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glStencilFunc "
 	c.glStencilFunc = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9863,9 +7051,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glTexBuffer "
 	c.glTexBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTexBufferRange "
-	c.glTexBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glTexCoordP1ui "
 	c.glTexCoordP1ui = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -9924,21 +7109,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glTexParameteriv "
 	c.glTexParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glTexStorage1D "
-	c.glTexStorage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTexStorage2D "
-	c.glTexStorage2D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTexStorage2DMultisample "
-	c.glTexStorage2DMultisample = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTexStorage3D "
-	c.glTexStorage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTexStorage3DMultisample "
-	c.glTexStorage3DMultisample = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glTexSubImage1D "
 	c.glTexSubImage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -9947,66 +7117,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glTexSubImage3D "
 	c.glTexSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureBarrier "
-	c.glTextureBarrier = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureBuffer "
-	c.glTextureBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureBufferRange "
-	c.glTextureBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameterIiv "
-	c.glTextureParameterIiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameterIuiv "
-	c.glTextureParameterIuiv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameterf "
-	c.glTextureParameterf = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameterfv "
-	c.glTextureParameterfv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameteri "
-	c.glTextureParameteri = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureParameteriv "
-	c.glTextureParameteriv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureStorage1D "
-	c.glTextureStorage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureStorage2D "
-	c.glTextureStorage2D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureStorage2DMultisample "
-	c.glTextureStorage2DMultisample = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureStorage3D "
-	c.glTextureStorage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureStorage3DMultisample "
-	c.glTextureStorage3DMultisample = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureSubImage1D "
-	c.glTextureSubImage1D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureSubImage2D "
-	c.glTextureSubImage2D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureSubImage3D "
-	c.glTextureSubImage3D = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTextureView "
-	c.glTextureView = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTransformFeedbackBufferBase "
-	c.glTransformFeedbackBufferBase = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glTransformFeedbackBufferRange "
-	c.glTransformFeedbackBufferRange = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glTransformFeedbackVaryings "
 	c.glTransformFeedbackVaryings = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -10170,9 +7280,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glUnmapBuffer "
 	c.glUnmapBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glUnmapNamedBuffer "
-	c.glUnmapNamedBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glUseProgram "
 	c.glUseProgram = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -10184,30 +7291,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glValidateProgramPipeline "
 	c.glValidateProgramPipeline = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayAttribBinding "
-	c.glVertexArrayAttribBinding = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayAttribFormat "
-	c.glVertexArrayAttribFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayAttribIFormat "
-	c.glVertexArrayAttribIFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayAttribLFormat "
-	c.glVertexArrayAttribLFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayBindingDivisor "
-	c.glVertexArrayBindingDivisor = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayElementBuffer "
-	c.glVertexArrayElementBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayVertexBuffer "
-	c.glVertexArrayVertexBuffer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexArrayVertexBuffers "
-	c.glVertexArrayVertexBuffers = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glVertexAttrib1d "
 	c.glVertexAttrib1d = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -10317,14 +7400,8 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glVertexAttrib4usv "
 	c.glVertexAttrib4usv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glVertexAttribBinding "
-	c.glVertexAttribBinding = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glVertexAttribDivisor "
 	c.glVertexAttribDivisor = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexAttribFormat "
-	c.glVertexAttribFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glVertexAttribI1i "
 	c.glVertexAttribI1i = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -10386,9 +7463,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 	commandName = "glVertexAttribI4usv "
 	c.glVertexAttribI4usv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
-	commandName = "glVertexAttribIFormat "
-	c.glVertexAttribIFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
 	commandName = "glVertexAttribIPointer "
 	c.glVertexAttribIPointer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
@@ -10415,9 +7489,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glVertexAttribL4dv "
 	c.glVertexAttribL4dv = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexAttribLFormat "
-	c.glVertexAttribLFormat = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glVertexAttribLPointer "
 	c.glVertexAttribLPointer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
@@ -10448,9 +7519,6 @@ func Init(procLoader extern func([*]u8) ?[*]u8) !Context {
 
 	commandName = "glVertexAttribPointer "
 	c.glVertexAttribPointer = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
-
-	commandName = "glVertexBindingDivisor "
-	c.glVertexBindingDivisor = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
 
 	commandName = "glVertexP2ui "
 	c.glVertexP2ui = procLoader(commandName.ptr) orelse return error.openGLCommandNotFound
